@@ -1,0 +1,1 @@
+{"virtualbox":{"/srv/webapp":{"create":true,"guestpath":"/srv/webapp","hostpath":"C:/Users/Josh/Desktop/CMSC447-Group6-WebsiteProject/webapp","disabled":false,"__vagrantfile":true},"/var/config_files":{"create":true,"guestpath":"/var/config_files","hostpath":"C:/Users/Josh/Desktop/CMSC447-Group6-WebsiteProject/config","disabled":false,"__vagrantfile":true}}}
