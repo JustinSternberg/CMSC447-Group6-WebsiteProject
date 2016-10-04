@@ -30,10 +30,7 @@ class DB {
 
         try{
 		    $conn = new PDO("mysql:host=$cred[servername];dbname=$cred[dbname]", $cred['username'], $cred['password']);
-<<<<<<< HEAD
-            //$conn = new PDO("mysql:host=studentdb-maria.gl.umbc.edu;dbname=jstand1", "jstand1", "jstand1");
-=======
->>>>>>> fef812aff75a8dad58ee649dd4dd18f6079051af
+
 		    // set the PDO error mode to exception
 		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		    return $conn;
@@ -43,22 +40,7 @@ class DB {
         }
 		return null;
 	}
-
-    /**
-<<<<<<< HEAD
-     * Tests to see if connection works
-     * Precondtions: None
-     * Postconditions: Bool is returned
-     * @return bool
-     */
-    public function testConn(){
-        $conn = $this->connect();
-        return !is_null($conn);
-    }
-
-    /**
-=======
->>>>>>> fef812aff75a8dad58ee649dd4dd18f6079051af
+    /*
      * @param $ID
      * @return array|bool|string
      */
@@ -108,11 +90,8 @@ class DB {
      * Submits a query to the database
      */
     public function selectAll(){
-<<<<<<< HEAD
         $table = "user_accounts";
-=======
-        $table = "LIBRARY_Student_Apps";
->>>>>>> fef812aff75a8dad58ee649dd4dd18f6079051af
+
         $conn = $this->connect();
         $stmt = $conn->prepare("select * from $table");
         $stmt->execute();
@@ -246,8 +225,6 @@ class DB {
         return true;
     }
 
-<<<<<<< HEAD
-=======
     public function submitWorkStudy($data){
         if($this->applied($data["campusID"])){
             return false;
@@ -366,5 +343,5 @@ class DB {
         }
         return true;
     }
->>>>>>> fef812aff75a8dad58ee649dd4dd18f6079051af
+
 }
