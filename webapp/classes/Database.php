@@ -30,7 +30,10 @@ class DB {
 
         try{
 		    $conn = new PDO("mysql:host=$cred[servername];dbname=$cred[dbname]", $cred['username'], $cred['password']);
+<<<<<<< HEAD
             //$conn = new PDO("mysql:host=studentdb-maria.gl.umbc.edu;dbname=jstand1", "jstand1", "jstand1");
+=======
+>>>>>>> fef812aff75a8dad58ee649dd4dd18f6079051af
 		    // set the PDO error mode to exception
 		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		    return $conn;
@@ -42,6 +45,7 @@ class DB {
 	}
 
     /**
+<<<<<<< HEAD
      * Tests to see if connection works
      * Precondtions: None
      * Postconditions: Bool is returned
@@ -53,6 +57,8 @@ class DB {
     }
 
     /**
+=======
+>>>>>>> fef812aff75a8dad58ee649dd4dd18f6079051af
      * @param $ID
      * @return array|bool|string
      */
@@ -102,7 +108,11 @@ class DB {
      * Submits a query to the database
      */
     public function selectAll(){
+<<<<<<< HEAD
         $table = "user_accounts";
+=======
+        $table = "LIBRARY_Student_Apps";
+>>>>>>> fef812aff75a8dad58ee649dd4dd18f6079051af
         $conn = $this->connect();
         $stmt = $conn->prepare("select * from $table");
         $stmt->execute();
@@ -236,4 +246,125 @@ class DB {
         return true;
     }
 
+<<<<<<< HEAD
+=======
+    public function submitWorkStudy($data){
+        if($this->applied($data["campusID"])){
+            return false;
+        }
+        try {
+            $table = "LIBRARY_Student_App_Work";
+            $conn = $this->connect();
+            $stmt = $conn->prepare("INSERT INTO LIBRARY_Student_App_Work (campusID, semesterApplied, mondayOne, mondayTwo, 
+                                                                          tuesdayOne, tuesdayTwo, wednesdayOne, wednesdayTwo,
+                                                                           thursdayOne, thursdayTwo, fridayOne, fridayTwo,
+                                                                           saturdayOne, saturdayTwo, sundayOne, sundayTwo,
+                                                                           workedBefore, workedBeforeWhere, currentlyWorking,
+                                                                           currentlyWhere, computerExp, officeEquipment, publicExp,
+                                                                           foreignLang, specialSkills, recentEmployer, employerAddress, 
+                                                                           supervisorName, position, employedFrom, employedTo, reasonForLeaving,
+                                                                           recentEmployerTwo, employerAddressTwo, supervisorNameTwo, positionTwo, 
+                                                                           employedFromTwo, employedToTwo, reasonForLeavingTwo, academicStatus, anticipatedGrad, major)
+                                                                          VALUES(:campusID, :semesterApplied, :mondayOne, :mondayTwo, 
+                                                                          :tuesdayOne, :tuesdayTwo, :wednesdayOne, :wednesdayTwo,
+                                                                          :thursdayOne, :thursdayTwo, :fridayOne, :fridayTwo,
+                                                                          :saturdayOne, :saturdayTwo, :sundayOne, :sundayTwo,
+                                                                          :workedBefore, :workedBeforeWhere, :currentlyWorking,
+                                                                          :currentlyWhere, :computerExp, :officeEquipment, :publicExp,
+                                                                          :foreignLang, :specialSkills, :recentEmployer, :employerAddress, 
+                                                                          :supervisorName, :position, :employedFrom, :employedTo, :reasonForLeaving,
+                                                                          :recentEmployerTwo, :employerAddressTwo, :supervisorNameTwo, :positionTwo, 
+                                                                          :employedFromTwo, :employedToTwo, :reasonForLeavingTwo, :academicStatus, :anticipatedGrad, :major)");
+            $stmt->bindParam(':campusID', $campusID);
+            $stmt->bindParam(':semesterApplied', $semesterApplied);
+            $stmt->bindParam(':mondayOne', $mondayOne);
+            $stmt->bindParam(':mondayTwo', $mondayTwo);
+            $stmt->bindParam(':tuesdayOne', $tuesdayOne);
+            $stmt->bindParam(':tuesdayTwo', $tuesdayTwo);
+            $stmt->bindParam(':wednesdayOne', $wednesdayOne);
+            $stmt->bindParam(':wednesdayTwo', $wednesdayTwo);
+            $stmt->bindParam(':thursdayOne', $thursdayOne);
+            $stmt->bindParam(':thursdayTwo', $thursdayTwo);
+            $stmt->bindParam(':fridayOne', $fridayOne);
+            $stmt->bindParam(':fridayTwo', $fridayTwo);
+            $stmt->bindParam(':saturdayOne', $saturdayOne);
+            $stmt->bindParam(':saturdayTwo', $saturdayTwo);
+            $stmt->bindParam(':sundayOne', $sundayOne);
+            $stmt->bindParam(':sundayTwo', $sundayTwo);
+            $stmt->bindParam(':workedBefore', $workedBefore);
+            $stmt->bindParam(':workedBeforeWhere', $workedBeforeWhere);
+            $stmt->bindParam(':currentlyWorking', $currentlyWorking);
+            $stmt->bindParam(':currentlyWhere', $currentlyWhere);
+            $stmt->bindParam(':computerExp', $computerExp);
+            $stmt->bindParam(':officeEquipment', $officeEquipment);
+            $stmt->bindParam(':publicExp', $publicExp);
+            $stmt->bindParam(':foreignLang', $foreignLang);
+            $stmt->bindParam(':specialSkills', $specialSkills);
+            $stmt->bindParam(':recentEmployer', $recentEmployer);
+            $stmt->bindParam(':employerAddress', $employerAddress);
+            $stmt->bindParam(':supervisorName', $supervisorName);
+            $stmt->bindParam(':position', $position);
+            $stmt->bindParam(':employedFrom', $employedFrom);
+            $stmt->bindParam(':employedTo', $employedTo);
+            $stmt->bindParam(':reasonForLeaving', $reasonForLeaving);
+            $stmt->bindParam(':recentEmployerTwo', $recentEmployerTwo);
+            $stmt->bindParam(':employerAddressTwo', $employerAddressTwo);
+            $stmt->bindParam(':supervisorNameTwo', $supervisorNameTwo);
+            $stmt->bindParam(':positionTwo', $positionTwo);
+            $stmt->bindParam(':employedFromTwo', $employedFromTwo);
+            $stmt->bindParam(':employedToTwo', $employedToTwo);
+            $stmt->bindParam(':reasonForLeavingTwo', $reasonForLeavingTwo);
+            $stmt->bindParam(':academicStatus', $academicStatus);
+            $stmt->bindParam(':anticipatedGrad', $anticipatedGrad);
+            $stmt->bindParam(':major', $major);
+            $campusID = $data["campusID"];
+            $semesterApplied = $data["semester"];
+            $mondayOne = $data["Monday1"];
+            $mondayTwo = $data["Monday2"];
+            $tuesdayOne = $data["Tuesday1"];
+            $tuesdayTwo = $data["Tuesday2"];
+            $wednesdayOne = $data["Wednesday1"];
+            $wednesdayTwo = $data["Wednesday2"];
+            $thursdayOne = $data["Thursday1"];
+            $thursdayTwo = $data["Thursday2"];
+            $fridayOne = $data["Friday1"];
+            $fridayTwo = $data["Friday2"];
+            $saturdayOne = $data["Saturday1"];
+            $saturdayTwo = $data["Saturday2"];
+            $sundayOne = $data["Sunday1"];
+            $sundayTwo = $data["Sunday2"];
+            $workedBefore = $data["prior"];
+            $workedBeforeWhere = $data["priorInfo"];
+            $currentlyWorking = $data["else"];
+            $currentlyWhere = $data["whereElse"];
+            $computerExp = $data["compExp"];
+            $officeEquipment = $data["ofmacExp"];
+            $publicExp = $data["psExp"];
+            $foreignLang = $data["languages"];
+            $specialSkills = $data["skills"];
+            $recentEmployer = $data["recEmp"];
+            $employerAddress = $data["recEmpAd"];
+            $supervisorName = $data["recEmpSup"];
+            $position = $data["recEmpDut"];
+            $employedFrom = $data["recEmpd1"];
+            $employedTo = $data["recEmpd2"];
+            $reasonForLeaving = $data["recEmplv"];
+            $recentEmployerTwo = $data["prevEmp"];
+            $employerAddressTwo = $data["prevEmpAd"];
+            $supervisorNameTwo = $data["prevEmpSup"];
+            $positionTwo = $data["prevEmpDut"];
+            $employedFromTwo = $data["prevEmpd1"];
+            $employedToTwo = $data["prevEmpd2"];
+            $reasonForLeavingTwo = $data["prevEmplv"];
+            $academicStatus = $data["status"];
+            $anticipatedGrad = $data["grad"];
+            $major = $data["field"];
+            $stmt->execute();
+        }
+        catch(PDOException $e){
+            return false;
+        }
+        return true;
+    }
+>>>>>>> fef812aff75a8dad58ee649dd4dd18f6079051af
 }
