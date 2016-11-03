@@ -13,6 +13,6 @@ if($_SESSION["auth"]){
     header("Location:home.php");
 }
 else{
-    header("Location:index.php");
+    header("Location:indexed.php");
 }
 

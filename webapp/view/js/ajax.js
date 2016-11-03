@@ -19,6 +19,18 @@ function submitApp(code){
     );
 }
 
+function populate(code){
+
+    new Ajax.Request( "register.php",
+        {
+            method: "get",
+            parameters: {code : code},
+            onSuccess: worked,
+            onFailure: failed
+        }
+    );
+}
+
 /**
  * Ajax on Success function
  */

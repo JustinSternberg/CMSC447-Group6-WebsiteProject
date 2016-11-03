@@ -12,7 +12,7 @@ session_start();
 function credCheck(){
 	session_start();
 	if(!$_SESSION["auth"]){
-		header("Location:index.php");
+		header("Location:indexed.php");
 	}
 }
 
