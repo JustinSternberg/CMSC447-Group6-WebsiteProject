@@ -10,5 +10,3 @@
 	$db = new DB();
 
     echo $_GET["code"] . "\n";
-  
-

@@ -73,6 +73,7 @@ class DB {
      */
     public function getName($ID){
         $table = "user_accounts";
+        $ID = strtoupper($ID);
         try {
             $conn = $this->connect();
             $stmt = $conn->prepare("SELECT * FROM $table WHERE campusID = '" . $ID . "'");
@@ -83,7 +84,7 @@ class DB {
             $conn = null;
 
             foreach ($result as $k => $v) {
-                return $v["firstName"] . " " . $v["lastName"];
+                return $v["fName"] . " " . $v["lName"];
             }
 
             return $result;

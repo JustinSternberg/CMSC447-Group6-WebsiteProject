@@ -4,6 +4,7 @@
 
 /**
  * Ajax test method
+ * Delete this -- Unit test
  * @param code
  */
 function submitApp(code){
