@@ -50,7 +50,7 @@ class DB {
         $table = "user_accounts";
         try {
             $conn = $this->connect();
-            $stmt = $conn->prepare("select password from $table WHERE campusID = '" . $ID . "'");
+            $stmt = $conn->prepare("select password from $table WHERE email = '" . $ID . "'");
             $stmt->execute();
             $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $result = $stmt->fetchAll();
@@ -101,7 +101,7 @@ class DB {
         $ID = strtoupper($ID);
         try {
             $conn = $this->connect();
-            $stmt = $conn->prepare("SELECT * FROM $table WHERE campusID = '" . $ID . "'");
+            $stmt = $conn->prepare("SELECT * FROM $table WHERE email = '" . $ID . "'");
             $stmt->execute();
             $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $result = $stmt->fetchAll();

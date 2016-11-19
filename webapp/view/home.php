@@ -10,6 +10,7 @@ if(!$_SESSION["auth"]){
  * Date: 10/6/2016
  * Time: 5:57 PM
  */
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,13 +91,16 @@ if(!$_SESSION["auth"]){
                     <a href="#page-top"></a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#portfolio">Marketplace</a>
+                    <a href="index.php">Marketplace</a>
                 </li>
                 <li class="page-scroll">
                     <a href="#about">Service</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#contact">Profile</a>
+                    <a href="home.php">Profile</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="logout.php">Logout</a>
                 </li>
             </ul>
         </div>
@@ -119,9 +123,11 @@ if(!$_SESSION["auth"]){
                 </div>
             </div>
         </div> -->
+        Welcome back <?php echo $_SESSION["name"]; ?>
         <div id="profile-picture">
              <img src="img/profiles/1.jpg" class="fit"/>
         </div>
+
     </div>
 </header>
 

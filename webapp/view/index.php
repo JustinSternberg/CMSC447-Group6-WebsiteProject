@@ -83,17 +83,20 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Marketplace</a>
+                        <a href="index.php">Marketplace</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#about">Service</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#contact">Profile</a>
+                        <a href="home.php">Profile</a>
+                    </li>
+                    <li class="page-scroll">
+                        <?php if($_SESSION["auth"])echo "<a href='logout.php'>Logout</a>"; ?>
                     </li>
                 </ul>
             </div>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" <?php if($_SESSION["auth"])echo "style='display:none;'"; ?>>
                 <li><p class="navbar-text">Already have an account?</p></li>
                 <li class="dropdown keep">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
@@ -116,6 +119,7 @@
                                         <div class="form-group">
                                             <label class="sr-only" for="exampleInputPassword2">Password</label>
                                             <input type="password" name="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                            <?php if($_SESSION["wrongPass"]){echo "<span class='wrong'>*Incorrect Login</span>";} ?>
                                             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
                                         </div>
                                         <div class="form-group">

@@ -50,3 +50,8 @@
 .keep{
     display: inline !important;
 }
+
+.wrong{
+    color:red;
+
+}
