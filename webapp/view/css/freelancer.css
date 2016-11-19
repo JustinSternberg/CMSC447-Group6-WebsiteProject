@@ -18,8 +18,9 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-  color: #dbcd32;
-  outline: none;
+  /*color: #dbcd32;*/
+    color:#efc660 !important;
+    outline: none;
 }
 h1,
 h2,
@@ -528,6 +529,7 @@ fieldset[disabled] .btn-success.active {
     margin-bottom: 10px;
 }
 .btn-fb{
+
     color: #fff;
     background-color:#3b5998;
 }

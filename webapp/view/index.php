@@ -22,6 +22,7 @@
 
     <!-- Theme CSS -->
     <link href="css/freelancer.min.css" rel="stylesheet">
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -38,7 +39,7 @@
     <!-- jQuery -->
     <!--<script src="vendor/jquery/jquery.min.js"></script>
 
-
+    -->
 
     <!-- AJAX Prototype Import -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">jQuery.noConflict();</script>
@@ -94,7 +95,7 @@
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <li><p class="navbar-text">Already have an account?</p></li>
-                <li class="dropdown">
+                <li class="dropdown keep">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
                     <ul id="login-dp" class="dropdown-menu">
                         <li>
@@ -106,14 +107,15 @@
                                         <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
                                     </div>
                                     or
+                                    <!-- LOGIN SECTION -->
                                     <form class="form" role="form" method="post" action="login.php" accept-charset="UTF-8" id="login-nav">
                                         <div class="form-group">
                                             <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                            <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                            <input type="password" name="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
                                             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
                                         </div>
                                         <div class="form-group">
@@ -123,11 +125,9 @@
                                             <label>
                                                 <input type="checkbox"> keep me logged-in
                                             </label>
+                                            <i style="font-size:.6em;">Don't have an account? <a class="avis" href="">Register</a></i>
                                         </div>
                                     </form>
-                                </div>
-                                <div class="bottom text-center">
-                                    New here ? <a href="#"><b>Join Us</b></a>
                                 </div>
                             </div>
                         </li>
@@ -318,7 +318,7 @@
                     <div class="footer-col col-md-4">
                         <h3>Location</h3>
                         <p>1000 Hilltop Circle
-                            <br>Balrimore, MD 21250</p>
+                            <br>Baltimore, MD 21250</p>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Around the Web</h3>
@@ -342,7 +342,7 @@
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>UMBC Marketplace</h3>
-                        <p>Careiglist replacement for college.</p>
+                        <p>Craigslist replacement for college.</p>
                     </div>
                 </div>
             </div>
@@ -380,7 +380,11 @@
                         <div class="modal-body">
                             <h2>Books</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/book.jpg" class="img-responsive img-centered" alt="">
+                            <div id="results">
+                                
+
+                            </div>
+                            <!--<img src="img/portfolio/book.jpg" class="img-responsive img-centered" alt="">
                             <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
@@ -396,7 +400,7 @@
                                     </strong>
                                 </li>
                             </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button> -->
                         </div>
                     </div>
                 </div>

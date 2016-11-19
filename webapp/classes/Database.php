@@ -64,6 +64,31 @@ class DB {
         }
     }
 
+    /*
+     * gitGuds
+     * Preconditions: $code
+     *
+     */
+    public function gitGuds($code){
+        $table = "services";
+        if(is_null($code)) return null;
+        try {
+            $conn = $this->connect();
+            $stmt = $conn->prepare("SELECT * FROM $table WHERE type = '" . $code . "'");
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll();
+
+            $conn = null;
+
+            return $result;
+        }
+        catch(PDOException $e){
+            echo $e;
+            return null;
+        }
+    }
+
     public function testConnection(){
         return !is_null($this->connect());
     }

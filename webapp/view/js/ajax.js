@@ -1,7 +1,7 @@
 /**
  * Created by Josh on 10/6/2016.
  */
-
+var id;
 /**
  * Ajax test method
  * Delete this -- Unit test
@@ -21,8 +21,8 @@ function submitApp(code){
 }
 
 function populate(code){
-
-    new Ajax.Request( "register.php",
+    id = code;
+    new Ajax.Request( "populate.php",
         {
             method: "get",
             parameters: {code : code},
@@ -36,7 +36,10 @@ function populate(code){
  * Ajax on Success function
  */
 function worked(ajax){
-    console.log(ajax.responseText);
+    var res = ajax.responseText;
+
+    console.log(res);
+
 }
 
 /**
@@ -44,5 +47,6 @@ function worked(ajax){
  * @param ajax
  */
 function failed(ajax){
+    console.log("AJAX FAILED");
     console.log(ajax.responseText);
 }

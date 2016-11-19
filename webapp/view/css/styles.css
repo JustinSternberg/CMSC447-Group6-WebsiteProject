@@ -13,3 +13,40 @@
     width:60%;
 
 }
+
+.item{
+    border: 1px solid black;
+    height:250px;
+    width: 60%;
+    padding:10px;
+    display:table;
+}
+
+.img-frame{
+    border:1px solid black;
+}
+
+.avis{
+    color:black !important;
+}
+
+/* For HOME.php */
+
+#profile-picture {
+    display: table;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    left: -50px;
+    bottom: 0px;
+    border: 1px black solid;
+}
+
+.fit{
+     height:100%;
+    width:100%;
+}
+
+.keep{
+    display: inline !important;
+}

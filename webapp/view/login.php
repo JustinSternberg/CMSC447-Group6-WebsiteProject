@@ -2,7 +2,7 @@
 require_once(dirname(__FILE__) . '/../load.php');
 session_start();
 $db = new DB();
-$_SESSION["auth"] = $db->authorize($_POST["campusID"], $_POST["password"]);
+$_SESSION["auth"] = $db->authorize($_POST["email"], $_POST["password"]);
 /**
  * Created by IntelliJ IDEA.
  * User: Josh
@@ -13,6 +13,6 @@ if($_SESSION["auth"]){
     header("Location:home.php");
 }
 else{
-    header("Location:indexed.php");
+    header("Location:index.php");
 }
 
