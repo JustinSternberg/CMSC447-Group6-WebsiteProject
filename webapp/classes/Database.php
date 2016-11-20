@@ -138,4 +138,9 @@ class DB {
             return false;
         }
     }
+
+    public function submit($first, $last, $email, $pass, $ID){
+        $table = "user_accounts";
+         
+    }
 }

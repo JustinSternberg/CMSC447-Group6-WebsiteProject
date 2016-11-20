@@ -386,7 +386,7 @@
                     <div class="modal-body fit" >
                         <h2 style="text-align:center;width:inherit !important;">Account Creation</h2>
                         <hr class="star-primary">
-                        <form action="submit.php" method="post" accept-charset="UTF-8">
+                        <form action="register.php" method="post" accept-charset="UTF-8">
                             <label>First name:<br /><input name="fName" id="fName" type="text" placeholder="First name"/> </label>
                             <label>Last name:<br /><input name="lName" id="lName" type="text" placeholder="Last name"/> </label>
                             <label>UMBC ID:<br /><input name="campusID" id="campusID" type="text" placeholder="Campus ID"/> </label><br />
@@ -399,9 +399,6 @@
                             <button value="Register" type="submit" onclick="return validate();">Register</button>
                         </form>
                     </div>
-                    <div class="col-lg-8 col-lg-offset-2">
-
-                     </div>
                  </div>
             </div>
         </div>

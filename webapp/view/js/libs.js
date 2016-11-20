@@ -8,11 +8,13 @@
  */
 function validate(){
 
+    return true;
+
     if(document.getElementById("password").value != document.getElementById("passwordRetype").value){
         console.log("Incorrect passwords");
         return false;
     }
 
 
-    return false;
+    return true;
 }
