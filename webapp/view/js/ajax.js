@@ -21,7 +21,7 @@ function submitApp(code){
 }
 
 function check(ID){
-    var val = document.getElementById("fName").value;
+    var val = document.getElementById(ID).value;
     console.log(val);
     new Ajax.Request( "check.php",
         {

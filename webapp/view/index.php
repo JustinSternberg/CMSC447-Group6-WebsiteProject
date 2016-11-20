@@ -385,17 +385,15 @@
                         <h2 style="text-align:center;width:inherit !important;">Account Creation</h2>
                         <hr class="star-primary">
                         <form action="register.php" method="post" accept-charset="UTF-8">
-                            <label>First name:<br /><input name="fName" id="fName" type="text" onkeyup="check('fName');" placeholder="First name"/>
-                            <span id=""></span>
-                            </label>
-                            <label>Last name:<br /><input name="lName" id="lName" type="text" placeholder="Last name"/> </label>
-                            <label>UMBC ID:<br /><input name="campusID" id="campusID" type="text" placeholder="Campus ID"/> </label><br />
-                            <label>Preferred email:<br /><input name="email" id="email" type="text" placeholder="email"/> </label><br />
-                            <label>Password:<br /><input name="password" id="password" type="password" placeholder="Password"/> </label><br />
+                            <label>First name:<br /><input name="fName" id="fName" type="text" placeholder="First name"/></label>
+                            <label>Last name:<br /><input name="lName" id="lName" type="text" placeholder="Last name"/></label>
+                            <label>UMBC ID:<br /><input name="campusID" id="campusID" type="text" onkeyup="check('campusID');" placeholder="Campus ID"/> </label><br />
+                            <label>Preferred email:<br /><input name="email" id="emailIn" type="text" onkeyup="check('emailIn');" placeholder="email"/> </label><br />
+                            <label>Password:<br /><input name="password" id="password" type="password" onkeyup="passwordVerify();" placeholder="Password"/> </label><br />
                             <i>At least 8 characters.</i><br />
-                            <label>Re-type Password:<br /><input  type="password" id="passwordRetype" placeholder="Verify Password" /> </label><br />
+                            <label>Re-type Password:<br /><input  type="password" id="passwordRetype" onkeyup="passwordVerify();" placeholder="Verify Password" />
+                                <span id="wrongPassReg"></span></label><br />
                             <i>Should match above passwords</i><br />
-                            <span id="wrongPassReg"></span>
                             <button value="Register" type="submit" onclick="return validate();">Register</button>
                         </form>
                     </div>

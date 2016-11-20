@@ -18,3 +18,21 @@ function validate(){
 
     return true;
 }
+
+function passwordVerify(){
+    var password = document.getElementById("password").value;
+    var passwordVerify = document.getElementById("passwordRetype").value;
+
+    if(password.length >= 8 && passwordVerify.length >= 8){
+        document.getElementById("wrongPassReg").className = "";
+        if(password != passwordVerify){
+            document.getElementById("wrongPassReg").className = "glyphicon glyphicon-remove-circle";
+            document.getElementById("wrongPassReg").style.color = "red";
+
+        }
+        else{
+            document.getElementById("wrongPassReg").className = "glyphicon glyphicon-ok-circle";
+            document.getElementById("wrongPassReg").style.color = "green";
+        }
+    }
+}
