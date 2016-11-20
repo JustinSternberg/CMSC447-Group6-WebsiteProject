@@ -53,5 +53,17 @@
 
 .wrong{
     color:red;
+}
 
+#create{
+    width:50% !important;
+    margin: 0 auto !important;
+    height:auto !important;
+    overflow: hidden;
+    top: 50px;
+}
+
+#bodyFit{
+    height:50px !important;
+    width:50px !important;
 }

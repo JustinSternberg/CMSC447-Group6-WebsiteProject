@@ -120,7 +120,7 @@
                                             <label class="sr-only" for="exampleInputPassword2">Password</label>
                                             <input type="password" name="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
                                             <?php if($_SESSION["wrongPass"]){echo "<span class='wrong'>*Incorrect Login</span>";} ?>
-                                            <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                                            <div class="help-block text-right"><a href="" style="color:#efc660 !important;">Forget the password ?</a></div>
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary btn-block">Sign in</button>
@@ -129,7 +129,9 @@
                                             <label>
                                                 <input type="checkbox"> keep me logged-in
                                             </label>
-                                            <i style="font-size:.6em;">Don't have an account? <a class="avis" href="">Register</a></i>
+                                            <i style="font-size:.6em;">Don't have an account? <a class="avis portfolio-link" data-toggle="modal" href="#createAccount">Register</a></i>
+
+
                                         </div>
                                     </form>
                                 </div>
@@ -159,6 +161,7 @@
         </div>
     </header>
 
+    
     <!-- Portfolio Grid Section -->
     <section id="portfolio">
         <div class="container">
@@ -370,6 +373,39 @@
     </div>
 
     <!-- Portfolio Modals -->
+    <div class="modal fade" id="createAccount"  role="dialog" aria-hidden="true">
+        <div class="modal-content" id="create">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="width:inherit;height: inherit;">
+                <div class="row">
+                    <div class="modal-body fit" >
+                        <h2 style="text-align:center;width:inherit !important;">Account Creation</h2>
+                        <hr class="star-primary">
+                        <form action="submit.php" method="post" accept-charset="UTF-8">
+                            <label>First name:<br /><input name="fName" id="fName" type="text" placeholder="First name"/> </label>
+                            <label>Last name:<br /><input name="lName" id="lName" type="text" placeholder="Last name"/> </label>
+                            <label>UMBC ID:<br /><input name="campusID" id="campusID" type="text" placeholder="Campus ID"/> </label><br />
+                            <label>Preferred email:<br /><input name="email" id="email" type="text" placeholder="email"/> </label><br />
+                            <label>Password:<br /><input name="password" id="password" type="password"/> </label><br />
+                            <i>At least 8 characters.</i><br />
+                            <label>Re-type Password:<br /><input  type="password" id="passwordRetype"/> </label><br />
+                            <i>Should match above passwords</i><br />
+                            <span id="wrongPassReg"></span>
+                            <button value="Register" type="submit" onclick="return validate();">Register</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-8 col-lg-offset-2">
+
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
     <div class="portfolio-modal modal fade" id="books" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
