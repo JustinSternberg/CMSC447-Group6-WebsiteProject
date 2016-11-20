@@ -20,6 +20,29 @@ function submitApp(code){
     );
 }
 
+function check(ID){
+    var val = document.getElementById("fName").value;
+    console.log(val);
+    new Ajax.Request( "check.php",
+        {
+            method: "get",
+            parameters: {ID : ID,
+                        val : val},
+            onSuccess: checkSuccess,
+            onFailure: checkFailure
+        }
+    );   
+}
+
+function checkSuccess(ajax){
+    
+    console.log("Success : " + ajax.responseText);
+}
+
+function checkFailure(){
+    console.log("Failure");
+}
+
 function populate(code){
     id = code;
     new Ajax.Request( "populate.php",

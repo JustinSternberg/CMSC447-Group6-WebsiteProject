@@ -89,7 +89,7 @@
                         <a href="#about">Service</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="home.php">Profile</a>
+                        <a href="home.php">Profile<span class="badge">4</span></a>
                     </li>
                     <li class="page-scroll">
                         <?php if($_SESSION["auth"])echo "<a href='logout.php'>Logout</a>"; ?>
@@ -130,8 +130,6 @@
                                                 <input type="checkbox"> keep me logged-in
                                             </label>
                                             <i style="font-size:.6em;">Don't have an account? <a class="avis portfolio-link" data-toggle="modal" href="#createAccount">Register</a></i>
-
-
                                         </div>
                                     </form>
                                 </div>
@@ -387,13 +385,15 @@
                         <h2 style="text-align:center;width:inherit !important;">Account Creation</h2>
                         <hr class="star-primary">
                         <form action="register.php" method="post" accept-charset="UTF-8">
-                            <label>First name:<br /><input name="fName" id="fName" type="text" placeholder="First name"/> </label>
+                            <label>First name:<br /><input name="fName" id="fName" type="text" onkeyup="check('fName');" placeholder="First name"/>
+                            <span id=""></span>
+                            </label>
                             <label>Last name:<br /><input name="lName" id="lName" type="text" placeholder="Last name"/> </label>
                             <label>UMBC ID:<br /><input name="campusID" id="campusID" type="text" placeholder="Campus ID"/> </label><br />
                             <label>Preferred email:<br /><input name="email" id="email" type="text" placeholder="email"/> </label><br />
-                            <label>Password:<br /><input name="password" id="password" type="password"/> </label><br />
+                            <label>Password:<br /><input name="password" id="password" type="password" placeholder="Password"/> </label><br />
                             <i>At least 8 characters.</i><br />
-                            <label>Re-type Password:<br /><input  type="password" id="passwordRetype"/> </label><br />
+                            <label>Re-type Password:<br /><input  type="password" id="passwordRetype" placeholder="Verify Password" /> </label><br />
                             <i>Should match above passwords</i><br />
                             <span id="wrongPassReg"></span>
                             <button value="Register" type="submit" onclick="return validate();">Register</button>

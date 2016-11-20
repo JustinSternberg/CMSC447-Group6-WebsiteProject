@@ -120,6 +120,34 @@ class DB {
         }
     }
 
+    /*
+     * @param $ID
+     * @return array|bool|string
+     */
+    public function entryExists($ID){
+        $table = "user_accounts";
+        $ID = strtoupper($ID);
+        try {
+            $conn = $this->connect();
+            $stmt = $conn->prepare("SELECT * FROM $table WHERE email = '" . $ID . "'");
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll();
+
+            $conn = null;
+
+            foreach ($result as $k => $v) {
+                return $v["fName"] . " " . $v["lName"];
+            }
+
+            return $result;
+        }
+        catch(PDOException $e){
+            echo $e;
+            return null;
+        }
+    }
+
     public function archive($ID, $CODE){
         $table = "LIBRARY_Student_Apps";
         try {
@@ -139,7 +167,7 @@ class DB {
         }
     }
 
-    public function submit(){
+    public function submit($data){
         $table = "LIBRARY_Student_Apps";
 
         try {
@@ -154,16 +182,14 @@ class DB {
             $stmt->bindParam(':password', $password);
 
 
-            $lastname = "Test";
-            $firstname = "test";
-            $email = "test";
-            $campusID = "test";
-            $password = "test";
+            $lastname = $data["lName"];
+            $firstname = $data["fName"];
+            $email = $data["email"];
+            $campusID = strtoupper($data["campusID"]);
+            $password = $data["password"];
 
             $stmt->execute();
-            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            $result = $stmt->fetchAll();
-
+           
             $conn = null;
 
             return true;

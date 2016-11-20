@@ -9,16 +9,16 @@
  * Time: 6:40 PM
  */
 
-$db->submit();
- 
     //check if any account information exists, if it does kick it back.
     //$db->getName("");
 
     //sanitize post and send it through
-    /*if($db->submit($_POST)){
+    if($db->submit($_POST)){
         header("Location:home.php");
     }
     else{
         //Kick back with updated webpage displaying detail problems
         header("Location:index.php");
     }
+
+    // Make an ajax call that verifies information on the fly.
