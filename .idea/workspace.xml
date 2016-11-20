@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d631cf5-4cf8-48a1-ad4d-1c02175b7a59" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/classes/Database.php" afterPath="$PROJECT_DIR$/webapp/classes/Database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/view/index.php" afterPath="$PROJECT_DIR$/webapp/view/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/view/js/libs.js" afterPath="$PROJECT_DIR$/webapp/view/js/libs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/view/logout.php" afterPath="$PROJECT_DIR$/webapp/view/logout.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/view/register.php" afterPath="$PROJECT_DIR$/webapp/view/register.php" />
     </list>
     <ignored path="CMSC447-Group6-WebsiteProject.iws" />
@@ -216,11 +212,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp/view/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+            <state relative-caret-position="180">
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -256,20 +252,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Database.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webapp/classes/Database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="143" column="9" selection-start-line="143" selection-start-column="9" selection-end-line="143" selection-end-column="9" />
+            <state relative-caret-position="175">
+              <caret line="141" column="29" selection-start-line="141" selection-start-column="29" selection-end-line="141" selection-end-column="29" />
               <folding>
-                <marker date="1479604579826" expanded="true" signature="1343:1364" ph="select * fro... ${$table}" />
-                <marker date="1479604579826" expanded="true" signature="1343:1385" ph="select campu... ${$table}" />
-                <marker date="1479604579826" expanded="true" signature="1343:1386" ph="select passw... ${$table}" />
-                <marker date="1479604579826" expanded="true" signature="1343:1398" ph="select passw... ${$table}" />
-                <marker date="1479604579826" expanded="true" signature="1343:1399" ph="select passw... ${$table}" />
-                <marker date="1479604579826" expanded="true" signature="1978:2027" ph="SELECT * FRO... ${$table}" />
-                <marker date="1479604579826" expanded="true" signature="2664:2712" ph="SELECT * FRO... ${$table}" />
-                <marker date="1479604579826" expanded="true" signature="3294:3406" ph="UPDATE ${$ta... " />
+                <marker date="1479605350706" expanded="true" signature="1343:1364" ph="select * fro... ${$table}" />
+                <marker date="1479605350706" expanded="true" signature="1343:1385" ph="select campu... ${$table}" />
+                <marker date="1479605350706" expanded="true" signature="1343:1386" ph="select passw... ${$table}" />
+                <marker date="1479605350706" expanded="true" signature="1343:1398" ph="select passw... ${$table}" />
+                <marker date="1479605350706" expanded="true" signature="1343:1399" ph="select passw... ${$table}" />
+                <marker date="1479605350706" expanded="true" signature="1978:2027" ph="SELECT * FRO... ${$table}" />
+                <marker date="1479605350706" expanded="true" signature="2664:2712" ph="SELECT * FRO... ${$table}" />
+                <marker date="1479605350706" expanded="true" signature="3294:3406" ph="UPDATE ${$ta... " />
+                <marker date="1479605350706" expanded="true" signature="3862:4015" ph="INSERT INTO user_accounts... " />
               </folding>
             </state>
           </provider>
@@ -348,8 +345,8 @@
         <option value="$PROJECT_DIR$/webapp/view/logout.php" />
         <option value="$PROJECT_DIR$/webapp/view/js/libs.js" />
         <option value="$PROJECT_DIR$/webapp/view/index.php" />
-        <option value="$PROJECT_DIR$/webapp/classes/Database.php" />
         <option value="$PROJECT_DIR$/webapp/view/register.php" />
+        <option value="$PROJECT_DIR$/webapp/classes/Database.php" />
       </list>
     </option>
   </component>
@@ -997,12 +994,12 @@
       <workItem from="1478207709825" duration="9764000" />
       <workItem from="1478234500558" duration="2716000" />
       <workItem from="1479447094374" duration="1956000" />
-      <workItem from="1479587464045" duration="15499000" />
+      <workItem from="1479587464045" duration="16366000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41312000" />
+    <option name="totallyTimeSpent" value="42179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1117,14 +1114,15 @@
         <state relative-caret-position="975">
           <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
-            <marker date="1479604579826" expanded="true" signature="1343:1364" ph="select * fro... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1385" ph="select campu... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1386" ph="select passw... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1398" ph="select passw... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1399" ph="select passw... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1978:2027" ph="SELECT * FRO... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="2664:2712" ph="SELECT * FRO... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="3294:3406" ph="UPDATE ${$ta... " />
+            <marker date="1479605350706" expanded="true" signature="1343:1364" ph="select * fro... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1385" ph="select campu... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1386" ph="select passw... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1398" ph="select passw... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1399" ph="select passw... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1978:2027" ph="SELECT * FRO... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="2664:2712" ph="SELECT * FRO... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="3294:3406" ph="UPDATE ${$ta... " />
+            <marker date="1479605350706" expanded="true" signature="3862:4015" ph="INSERT INTO user_accounts... " />
           </folding>
         </state>
       </provider>
@@ -1188,14 +1186,15 @@
         <state relative-caret-position="975">
           <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
-            <marker date="1479604579826" expanded="true" signature="1343:1364" ph="select * fro... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1385" ph="select campu... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1386" ph="select passw... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1398" ph="select passw... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1399" ph="select passw... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1978:2027" ph="SELECT * FRO... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="2664:2712" ph="SELECT * FRO... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="3294:3406" ph="UPDATE ${$ta... " />
+            <marker date="1479605350706" expanded="true" signature="1343:1364" ph="select * fro... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1385" ph="select campu... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1386" ph="select passw... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1398" ph="select passw... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1399" ph="select passw... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1978:2027" ph="SELECT * FRO... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="2664:2712" ph="SELECT * FRO... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="3294:3406" ph="UPDATE ${$ta... " />
+            <marker date="1479605350706" expanded="true" signature="3862:4015" ph="INSERT INTO user_accounts... " />
           </folding>
         </state>
       </provider>
@@ -1233,14 +1232,15 @@
         <state relative-caret-position="630">
           <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
           <folding>
-            <marker date="1479604579826" expanded="true" signature="1343:1364" ph="select * fro... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1385" ph="select campu... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1386" ph="select passw... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1398" ph="select passw... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1399" ph="select passw... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1978:2027" ph="SELECT * FRO... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="2664:2712" ph="SELECT * FRO... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="3294:3406" ph="UPDATE ${$ta... " />
+            <marker date="1479605350706" expanded="true" signature="1343:1364" ph="select * fro... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1385" ph="select campu... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1386" ph="select passw... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1398" ph="select passw... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1399" ph="select passw... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1978:2027" ph="SELECT * FRO... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="2664:2712" ph="SELECT * FRO... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="3294:3406" ph="UPDATE ${$ta... " />
+            <marker date="1479605350706" expanded="true" signature="3862:4015" ph="INSERT INTO user_accounts... " />
           </folding>
         </state>
       </provider>
@@ -1271,14 +1271,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479604579826" expanded="true" signature="1343:1364" ph="select * fro... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1385" ph="select campu... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1386" ph="select passw... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1398" ph="select passw... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1399" ph="select passw... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1978:2027" ph="SELECT * FRO... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="2664:2712" ph="SELECT * FRO... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="3294:3406" ph="UPDATE ${$ta... " />
+            <marker date="1479605350706" expanded="true" signature="1343:1364" ph="select * fro... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1385" ph="select campu... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1386" ph="select passw... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1398" ph="select passw... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1399" ph="select passw... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1978:2027" ph="SELECT * FRO... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="2664:2712" ph="SELECT * FRO... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="3294:3406" ph="UPDATE ${$ta... " />
+            <marker date="1479605350706" expanded="true" signature="3862:4015" ph="INSERT INTO user_accounts... " />
           </folding>
         </state>
       </provider>
@@ -1650,28 +1651,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/classes/Database.php">
+    <entry file="file://$PROJECT_DIR$/webapp/view/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="143" column="9" selection-start-line="143" selection-start-column="9" selection-end-line="143" selection-end-column="9" />
-          <folding>
-            <marker date="1479604579826" expanded="true" signature="1343:1364" ph="select * fro... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1385" ph="select campu... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1386" ph="select passw... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1398" ph="select passw... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1343:1399" ph="select passw... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="1978:2027" ph="SELECT * FRO... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="2664:2712" ph="SELECT * FRO... ${$table}" />
-            <marker date="1479604579826" expanded="true" signature="3294:3406" ph="UPDATE ${$ta... " />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/view/register.php">
+    <entry file="file://$PROJECT_DIR$/webapp/classes/Database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="175">
+          <caret line="141" column="29" selection-start-line="141" selection-start-column="29" selection-end-line="141" selection-end-column="29" />
+          <folding>
+            <marker date="1479605350706" expanded="true" signature="1343:1364" ph="select * fro... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1385" ph="select campu... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1386" ph="select passw... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1398" ph="select passw... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1343:1399" ph="select passw... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="1978:2027" ph="SELECT * FRO... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="2664:2712" ph="SELECT * FRO... ${$table}" />
+            <marker date="1479605350706" expanded="true" signature="3294:3406" ph="UPDATE ${$ta... " />
+            <marker date="1479605350706" expanded="true" signature="3862:4015" ph="INSERT INTO user_accounts... " />
+          </folding>
         </state>
       </provider>
     </entry>

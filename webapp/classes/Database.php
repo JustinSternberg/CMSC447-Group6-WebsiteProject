@@ -139,8 +139,39 @@ class DB {
         }
     }
 
-    public function submit($first, $last, $email, $pass, $ID){
-        $table = "user_accounts";
-         
+    public function submit(){
+        $table = "LIBRARY_Student_Apps";
+
+        try {
+            $conn = $this->connect();
+
+            $stmt = $conn->prepare("INSERT INTO user_accounts (lName, fName, email, campusID, password)
+                                VALUES (:lName, :fName, :email, :campusID, :password)");
+            $stmt->bindParam(':lName', $lastname);
+            $stmt->bindParam(':fName', $firstname);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':campusID', $campusID);
+            $stmt->bindParam(':password', $password);
+
+
+            $lastname = "Test";
+            $firstname = "test";
+            $email = "test";
+            $campusID = "test";
+            $password = "test";
+
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll();
+
+            $conn = null;
+
+            return true;
+        }
+        catch(PDOException $e){
+            echo $e;
+            return false;
+        }
+
     }
 }
