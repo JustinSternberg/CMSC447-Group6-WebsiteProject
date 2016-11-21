@@ -100,6 +100,9 @@ if(!$_SESSION["auth"]){
                     <a href="home.php">Profile<span class="badge">0</span></a>
                 </li>
                 <li class="page-scroll">
+                    <a href="index.php"><span class="glyphicon glyphicon-shopping-cart"></span><span class="badge">0</span></a>
+                </li>
+                <li class="page-scroll">
                     <a href="logout.php">Logout</a>
                 </li>
             </ul>
@@ -113,21 +116,15 @@ if(!$_SESSION["auth"]){
 <!-- Header -->
 <header>
     <div class="container">
-       <!--<div class="row">
-            <div class="col-lg-12">
-                <img class="img-responsive" src="img/profile.png" alt="">
-                <div class="intro-text">
-                    <span class="name">UMBC Marketplace</span>
-                    <hr class="star-light">
-                    <span class="skills">One stop shop for all student needs</span>
-                </div>
+        <div id="profile-options">
+            <div id="profile-picture">
+                <img src="img/profiles/1.jpg" class="fit"/>
             </div>
-        </div> -->
-        Welcome back <?php echo $_SESSION["name"]; ?>
-        <div id="profile-picture">
-             <img src="img/profiles/1.jpg" class="fit"/>
+            Welcome back <?php echo $_SESSION["name"]; ?>
         </div>
-
+        <div id="listings">
+            open content
+        </div>
     </div>
 </header>
 

@@ -92,6 +92,9 @@
                         <a href="home.php">Profile<span class="badge">0</span></a>
                     </li>
                     <li class="page-scroll">
+                        <a href="index.php"><span class="glyphicon glyphicon-shopping-cart"></span><span class="badge">0</span></a>
+                    </li>
+                    <li class="page-scroll">
                         <?php if($_SESSION["auth"])echo "<a href='logout.php'>Logout</a>"; ?>
                     </li>
                 </ul>
