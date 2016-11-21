@@ -22,25 +22,65 @@ function submitApp(code){
 
 function check(ID){
     var val = document.getElementById(ID).value;
-    console.log(val);
-    new Ajax.Request( "check.php",
-        {
-            method: "get",
-            parameters: {ID : ID,
-                        val : val},
-            onSuccess: checkSuccess,
-            onFailure: checkFailure
-        }
-    );   
+    console.log(ID);
+    if(ID == "emailIn"){
+        //Test regex for email
+        new Ajax.Request( "check.php",
+            {
+                method: "get",
+                parameters: {ID : ID,
+                    val : val},
+                onSuccess: checkSuccess,
+                onFailure: checkFailure
+            }
+        );
+    }
+    else if(ID == "campusID"){
+        //Sanitize before
+        new Ajax.Request( "check.php",
+            {
+                method: "get",
+                parameters: {ID : ID,
+                    val : val},
+                onSuccess: campusSuccess,
+                onFailure: checkFailure
+            }
+        );
+    }
 }
 
+/*
+ * Update glyphicon image @ id
+ */
 function checkSuccess(ajax){
-    
-    console.log("Success : " + ajax.responseText);
+
+        document.getElementById("emailCheck").className = "";
+        if(ajax.responseText == 1){
+            document.getElementById("emailCheck").className = "glyphicon glyphicon-remove-circle";
+            document.getElementById("emailCheck").style.color = "red";
+
+        }
+        else{
+            document.getElementById("emailCheck").className = "glyphicon glyphicon-ok-circle";
+            document.getElementById("emailCheck").style.color = "green";
+        }
 }
 
 function checkFailure(){
-    console.log("Failure");
+    console.log("Failure @ __LINE__");
+}
+
+function campusSuccess(ajax){
+    document.getElementById("campusIDCheck").className = "";
+    if(ajax.responseText == 1){
+        document.getElementById("campusIDCheck").className = "glyphicon glyphicon-remove-circle";
+        document.getElementById("campusIDCheck").style.color = "red";
+
+    }
+    else{
+        document.getElementById("campusIDCheck").className = "glyphicon glyphicon-ok-circle";
+        document.getElementById("campusIDCheck").style.color = "green";
+    }
 }
 
 function populate(code){

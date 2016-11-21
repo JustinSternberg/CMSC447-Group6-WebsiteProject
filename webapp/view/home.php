@@ -97,7 +97,7 @@ if(!$_SESSION["auth"]){
                     <a href="#about">Service</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="home.php">Profile<span class="badge">4</span></a>
+                    <a href="home.php">Profile<span class="badge">0</span></a>
                 </li>
                 <li class="page-scroll">
                     <a href="logout.php">Logout</a>

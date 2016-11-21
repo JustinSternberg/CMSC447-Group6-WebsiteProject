@@ -124,21 +124,16 @@ class DB {
      * @param $ID
      * @return array|bool|string
      */
-    public function entryExists($ID){
+    public function entryExists($ID, $entry){
         $table = "user_accounts";
-        $ID = strtoupper($ID);
         try {
             $conn = $this->connect();
-            $stmt = $conn->prepare("SELECT * FROM $table WHERE email = '" . $ID . "'");
+            $stmt = $conn->prepare("SELECT * FROM $table WHERE " . $entry  . " = '" . $ID . "'");
             $stmt->execute();
             $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $result = $stmt->fetchAll();
 
             $conn = null;
-
-            foreach ($result as $k => $v) {
-                return $v["fName"] . " " . $v["lName"];
-            }
 
             return $result;
         }

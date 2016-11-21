@@ -7,15 +7,13 @@
  * @returns {boolean} True if user input passes, false otherwise.
  */
 function validate(){
-
+    /* Include Fname and LName in verification*/
     return true;
-
+    /* Call the functions of ajax validation in here. */
     if(document.getElementById("password").value != document.getElementById("passwordRetype").value){
         console.log("Incorrect passwords");
         return false;
     }
-
-
     return true;
 }
 

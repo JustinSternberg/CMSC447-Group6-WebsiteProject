@@ -89,7 +89,7 @@
                         <a href="#about">Service</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="home.php">Profile<span class="badge">4</span></a>
+                        <a href="home.php">Profile<span class="badge">0</span></a>
                     </li>
                     <li class="page-scroll">
                         <?php if($_SESSION["auth"])echo "<a href='logout.php'>Logout</a>"; ?>
@@ -387,8 +387,12 @@
                         <form action="register.php" method="post" accept-charset="UTF-8">
                             <label>First name:<br /><input name="fName" id="fName" type="text" placeholder="First name"/></label>
                             <label>Last name:<br /><input name="lName" id="lName" type="text" placeholder="Last name"/></label>
-                            <label>UMBC ID:<br /><input name="campusID" id="campusID" type="text" onkeyup="check('campusID');" placeholder="Campus ID"/> </label><br />
-                            <label>Preferred email:<br /><input name="email" id="emailIn" type="text" onkeyup="check('emailIn');" placeholder="email"/> </label><br />
+                            <label>UMBC ID:<br /><input name="campusID" id="campusID" type="text" onkeyup="check('campusID');" placeholder="Campus ID"/>
+                                <span id="campusIDCheck"></span>
+                            </label><br />
+                            <label>Preferred email:<br /><input name="email" id="emailIn" type="text" onkeyup="check('emailIn');" placeholder="email"/>
+                                <span id="emailCheck"></span>
+                            </label><br />
                             <label>Password:<br /><input name="password" id="password" type="password" onkeyup="passwordVerify();" placeholder="Password"/> </label><br />
                             <i>At least 8 characters.</i><br />
                             <label>Re-type Password:<br /><input  type="password" id="passwordRetype" onkeyup="passwordVerify();" placeholder="Verify Password" />
