@@ -148,6 +148,39 @@ class DB {
         }
     }
 
+    public function getActiveListings($ID){
+        $table = "user_accounts";
+        $ID = strtoupper($ID);
+        try {
+            $conn = $this->connect();
+            $stmt = $conn->prepare("SELECT * FROM $table WHERE email = '" . $ID . "'");
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll();
+
+            $conn = null;
+
+            foreach ($result as $k => $v) {
+                $id = $v["campusID"];
+            }
+             
+            $table = "services";
+
+            $conn = $this->connect();
+            $stmt = $conn->prepare("SELECT * FROM $table WHERE campusID = '" . $id . "'");
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll();
+
+            $conn = null;
+            return $result;
+        }
+        catch(PDOException $e){
+            echo $e;
+            return null;
+        }
+    }
+
     /*
      * @param $ID
      * @return array|bool|string

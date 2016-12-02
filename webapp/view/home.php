@@ -136,8 +136,9 @@ $_SESSION["msg"]  =  $db->getMessageNo($_SESSION["email"]);
             <div class="col-md-3">
                 <div class="profile-sidebar">
                     <!-- SIDEBAR USERPIC -->
-                    <div class="profile-userpic">
-                        <img src="img/profiles/1.jpg" class="img-thumbnail picture hidden-xs" alt="">
+                    <div class="profile-userpic" id="heat">
+                        <img src="img/profiles/1.jpg" class="img-thumbnail picture hidden-xs" alt=""><br />
+                        <a href="#" style="font-size:.8em;">Change picture?</a>
                     </div>
                     <!-- END SIDEBAR USERPIC -->
                     <!-- SIDEBAR USER TITLE -->
@@ -184,9 +185,23 @@ $_SESSION["msg"]  =  $db->getMessageNo($_SESSION["email"]);
                     <!-- END MENU -->
                 </div>
             </div>
+
             <div class="col-md-9">
                 <div class="profile-content">
-                    Content goes here.
+                    <div class="list-group">
+                        <!-- Fully automate on login -->
+                        <?php $result = $db->getActiveListings($_SESSION["email"]);
+                            if($result) {
+                                foreach ($result as $k => $v) {
+                                    echo "<a href=\"#\" class=\"list-group-item spacing\">" . $v["good"] . "</a>";
+                                }
+                            }
+                            else{
+                                echo "There appears to be nothing here.<br/>
+                                <a href=\"#\">Make a new listing!</a>";
+                            }
+                        ?>
+                    </div>
                     <nav aria-label="...">
                         <ul class="pagination pagination-sm">
                             <li class="page-item">
@@ -209,9 +224,11 @@ $_SESSION["msg"]  =  $db->getMessageNo($_SESSION["email"]);
                 </div>
             </div>
         </div>
+
     </div>
     <br>
     <br>
+
 </header>
 
 <!-- Plugin JavaScript -->
