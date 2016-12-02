@@ -124,6 +124,34 @@ class DB {
      * @param $ID
      * @return array|bool|string
      */
+    public function getMessageNo($ID){
+        $table = "user_accounts";
+        $ID = strtoupper($ID);
+        try {
+            $conn = $this->connect();
+            $stmt = $conn->prepare("SELECT * FROM $table WHERE email = '" . $ID . "'");
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll();
+
+            $conn = null;
+
+            foreach ($result as $k => $v) {
+                return $v["messageNO"];
+            }
+
+            return $result;
+        }
+        catch(PDOException $e){
+            echo $e;
+            return null;
+        }
+    }
+
+    /*
+     * @param $ID
+     * @return array|bool|string
+     */
     public function entryExists($ID, $entry){
         $table = "user_accounts";
         try {

@@ -5,6 +5,7 @@ $db = new DB();
 //Parse and flush $_POST !!!!!
 $_SESSION["auth"] = $db->authorize($_POST["email"], $_POST["password"]);
 $_SESSION["name"] = $db->getName($_POST["email"]);
+$_SESSION["email"] = $_POST["email"];
 /**
  * Created by IntelliJ IDEA.
  * User: Josh

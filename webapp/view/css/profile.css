@@ -17,16 +17,19 @@ body {
 .profile-sidebar {
     padding: 20px 0 10px 0;
     background: #fff;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .profile-userpic img {
     float: none;
     margin: 0 auto;
-    width: 50%;
-    height: 50%;
-    -webkit-border-radius: 50% !important;
-    -moz-border-radius: 50% !important;
-    border-radius: 50% !important;
+    width: 70%;
+    height: 70%;
+    /*-webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;  rounded profile picture
+    border-radius: 50% !important;*/
+    border: 2px solid black;
 }
 
 .profile-usertitle {
@@ -110,4 +113,6 @@ body {
     padding: 20px;
     background: #fff;
     min-height: 460px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color:black;
 }

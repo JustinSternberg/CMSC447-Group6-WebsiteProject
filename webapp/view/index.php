@@ -2,6 +2,7 @@
     require_once(dirname(__FILE__) . '/../load.php');
     session_start();
     $db = new DB();
+    $_SESSION["cart"] = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,10 +90,22 @@
                         <a href="#about">Service</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="home.php">Profile<span class="badge">0</span></a>
+                        <a href="home.php">Profile
+                            <?php
+                            if($_SESSION["auth"]){
+                                echo "<span class='badge'>" . $_SESSION["msg"] . "</span>";
+                            }
+                            ?>
+                        </a>
                     </li>
                     <li class="page-scroll">
-                        <a href="index.php"><span class="glyphicon glyphicon-shopping-cart"></span><span class="badge">0</span></a>
+                        <a href="index.php"><span class="glyphicon glyphicon-shopping-cart"></span>
+                            <?php
+                            if($_SESSION["auth"]){
+                                echo "<span class='badge'>" . $_SESSION["cart"] . "</span>";
+                            }
+                            ?>
+                        </a>
                     </li>
                     <li class="page-scroll">
                         <?php if($_SESSION["auth"])echo "<a href='logout.php'>Logout</a>"; ?>
