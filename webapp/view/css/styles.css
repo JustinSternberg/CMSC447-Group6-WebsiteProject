@@ -3,6 +3,7 @@
     display:table;
     top:0;
 }
+
 #content{
     float:left;
     display:table;
@@ -38,6 +39,7 @@
     bottom: 0px;
     border: 1px black solid;
     float:left;
+    margin: 0 auto;
 }
 
 .fit{
@@ -56,7 +58,7 @@
 #listings{
     display:inline-flex;
     position:relative;
-    width: 60%;
+    width: 70%;
     height:500px;
     border: 1px black solid;
     background-color:red !important;
@@ -67,12 +69,13 @@
 #profile-options{
     display:inline-flex;
     position:relative;
-    width: 40%;
+    width: 20%;
     height:500px;
     border: 1px black solid;
     background-color:red !important;
     float:left;
     padding:10px;
+    min-width:200px;
 }
 
 #create{
