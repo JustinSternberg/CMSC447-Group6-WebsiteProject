@@ -12,7 +12,7 @@ var id;
  */
 function page(pageNo){
     console.log(pageNo);
-    if(pageNo < 0)return false;
+
     new Ajax.Request( "paginate.php",
         {
             method: "get",
@@ -28,8 +28,7 @@ function page(pageNo){
  *       homepage with active items
  */
 function pageSuccess(ajax){
-    $("#activeListing1").remove();
-    console.log(ajax.responseText + " : SUCCESS");
+     console.log(ajax.responseText);
 }
 
 /** pageFailure(var Ajax)

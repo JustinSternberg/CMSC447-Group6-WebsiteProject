@@ -12,7 +12,7 @@ $db = new DB();
  * Time: 5:57 PM
  */
 $_SESSION["msg"]  =  $db->getMessageNo($_SESSION["email"]);
-echo $_SESSION["campusID"];
+$_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -153,7 +153,7 @@ echo $_SESSION["campusID"];
                             <?php echo $_SESSION["name"]; ?>
                         </div>
                         <div class="profile-usertitle-job">
-                            Developer
+                            Developer <!-- 5 star rating system here -->
                         </div>
                     </div>
                     <!-- END SIDEBAR USER TITLE -->
@@ -210,7 +210,7 @@ echo $_SESSION["campusID"];
                         <a href="#" id="activeListing1" class="list-group-item spacing">This is nothing to be concerned about</a>
                     </div>
                     <nav aria-label="...">
-                        <ul class="pagination pagination-sm">
+                        <ul class="pagination pagination-sm" style="position:relative; bottom:0;">
                             <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
@@ -218,8 +218,8 @@ echo $_SESSION["campusID"];
                                 </a>
                             </li>
                             <li class="page-item"><a class="page-link" onclick="page(1);" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" onclick="page(2);" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" onclick="page(3);" href="#">3</a></li>
                             <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>

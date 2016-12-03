@@ -148,19 +148,22 @@ class DB {
         }
     }
 
-    public function getCampusID($email){
+    public function getCampusID($ID){
         $table = "user_accounts";
+        $ID = strtoupper($ID);
         try {
             $conn = $this->connect();
-            $stmt = $conn->prepare("SELECT * FROM $table WHERE " . $entry  . " = '" . $ID . "'");
+            $stmt = $conn->prepare("SELECT * FROM $table WHERE email = '" . $ID . "'");
             $stmt->execute();
             $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $result = $stmt->fetchAll();
 
             $conn = null;
-            foreach($result as $v => $k){
+
+            foreach ($result as $k => $v) {
                 return $v["campusID"];
             }
+
             return $result;
         }
         catch(PDOException $e){
@@ -222,25 +225,6 @@ class DB {
         catch(PDOException $e){
             echo $e;
             return null;
-        }
-    }
-
-    public function archive($ID, $CODE){
-        $table = "LIBRARY_Student_Apps";
-        try {
-            $conn = $this->connect();
-            $stmt = $conn->prepare("UPDATE $table SET archived = '" . date('Y-m-d') . "', appStatus = '" . $CODE . "' WHERE campusID = '" . $ID . "'");
-            $stmt->execute();
-            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            $result = $stmt->fetchAll();
-
-            $conn = null;
-
-            return true;
-        }
-        catch(PDOException $e){
-            echo $e;
-            return false;
         }
     }
 
