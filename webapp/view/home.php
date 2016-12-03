@@ -85,7 +85,7 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
 
 </head>
 
-<body id="page-top" class="index" bgcolor="#">
+<body id="page-top" class="index" bgcolor="#" style="overflow:hidden;">
 
 <!-- Navigation -->
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
@@ -95,7 +95,7 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="#page-top">UMBC Marketplace</a>
+            <a class="navbar-brand" href="#page-top">UMBC Market</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -141,7 +141,7 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
 
 <!-- Header -->
 <header>
-    <div class="container">
+    <div class="container" style="margin-top:-60px;">
         <div class="row profile">
             <div class="col-md-3">
                 <div class="profile-sidebar">
