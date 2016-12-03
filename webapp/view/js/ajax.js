@@ -2,24 +2,50 @@
  * Created by Josh on 10/6/2016.
  */
 var id;
-/**
- * Ajax test method
- * Delete this -- Unit test
- * @param code
- */
-function submitApp(code){
 
-    new Ajax.Request( "archiveApp.php",
+
+
+/*page(var int);
+ *Parameters(pageNo), number, which will determine which page to load
+ *Desc: Used to paginate the active listings on the profile screen
+ *
+ */
+function page(pageNo){
+    console.log(pageNo);
+    if(pageNo < 0)return false;
+    new Ajax.Request( "paginate.php",
         {
             method: "get",
-            parameters: {umbcID:ID,
-                code : code},
-            onSuccess: worked,
-            onFailure: failed
+            parameters: {pageNo : pageNo},
+            onSuccess: pageSuccess,
+            onFailure: pageFailure
         }
     );
 }
 
+/* pageSuccess(var Ajax)
+ * Desc: pageSuccess will be used to populate the
+ *       homepage with active items
+ */
+function pageSuccess(ajax){
+    $("#activeListing1").remove();
+    console.log(ajax.responseText + " : SUCCESS");
+}
+
+/** pageFailure(var Ajax)
+ * Desc: will be used as a test-function only
+ * @param ajax
+ */
+function pageFailure(ajax){
+    console.log(ajax.responseText + " : FAILURE");
+}
+
+/**
+ * check(var ID)
+ * Desc: will be used to check if pre-existing values
+ * already exist in the database and alert user on registration
+ * @param ID
+ */
 function check(ID){
     var val = document.getElementById(ID).value;
     console.log(ID);
@@ -83,6 +109,7 @@ function campusSuccess(ajax){
     }
 }
 
+/*Used to gather active goods in their respective categories*/
 function populate(code){
     id = code;
     new Ajax.Request( "populate.php",

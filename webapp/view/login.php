@@ -6,6 +6,7 @@ $db = new DB();
 $_SESSION["auth"] = $db->authorize($_POST["email"], $_POST["password"]);
 $_SESSION["name"] = $db->getName($_POST["email"]);
 $_SESSION["email"] = $_POST["email"];
+$_SESSION["campusID"] = $db->getCampusID($_POST["email"]);
 /**
  * Created by IntelliJ IDEA.
  * User: Josh

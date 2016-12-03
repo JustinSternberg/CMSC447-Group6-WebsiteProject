@@ -12,7 +12,7 @@ $db = new DB();
  * Time: 5:57 PM
  */
 $_SESSION["msg"]  =  $db->getMessageNo($_SESSION["email"]);
-
+echo $_SESSION["campusID"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,12 +56,18 @@ $_SESSION["msg"]  =  $db->getMessageNo($_SESSION["email"]);
     <!-- AJAX Prototype Import -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">jQuery.noConflict();</script>
     <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
-    <script src="js/ajax.js"></script>
-    <script src="js/libs.js"></script>
+
 
     <script type="text/javascript">
         //var JQ = $.noConflict(); //Need JQUERY.NOCONFLICT();  Otherwise prototypes methods will be overwritten
+        //This removes the current active listings.
         jQuery(function ($) {
+            $(document).ready(function(){
+                $(".page-item").click(function(){
+                    $(".list-group-item").remove();
+                });
+            });
+
             // The dollar sign will equal jQuery in this scope
             $('.modal')
                 .on('show.bs.modal', function() {
@@ -201,6 +207,7 @@ $_SESSION["msg"]  =  $db->getMessageNo($_SESSION["email"]);
                                 <a href=\"#\">Make a new listing!</a>";
                             }
                         ?>
+                        <a href="#" id="activeListing1" class="list-group-item spacing">This is nothing to be concerned about</a>
                     </div>
                     <nav aria-label="...">
                         <ul class="pagination pagination-sm">
@@ -210,7 +217,7 @@ $_SESSION["msg"]  =  $db->getMessageNo($_SESSION["email"]);
                                     <span class="sr-only">Previous</span>
                                 </a>
                             </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" onclick="page(1);" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item">
@@ -230,6 +237,11 @@ $_SESSION["msg"]  =  $db->getMessageNo($_SESSION["email"]);
     <br>
 
 </header>
+
+
+<!-- Custom JS Files -->
+<script src="js/libs.js"></script>
+<script src="js/ajax.js"></script>
 
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>

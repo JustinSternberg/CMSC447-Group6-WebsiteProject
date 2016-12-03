@@ -148,6 +148,27 @@ class DB {
         }
     }
 
+    public function getCampusID($email){
+        $table = "user_accounts";
+        try {
+            $conn = $this->connect();
+            $stmt = $conn->prepare("SELECT * FROM $table WHERE " . $entry  . " = '" . $ID . "'");
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll();
+
+            $conn = null;
+            foreach($result as $v => $k){
+                return $v["campusID"];
+            }
+            return $result;
+        }
+        catch(PDOException $e){
+            echo $e;
+            return null;
+        }
+    }
+
     public function getActiveListings($ID){
         $table = "user_accounts";
         $ID = strtoupper($ID);
