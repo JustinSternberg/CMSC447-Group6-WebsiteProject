@@ -17,15 +17,5 @@ require_once(dirname(__FILE__) . '/../load.php');
 session_start();
 $db = new DB();
 
-//Constants
-$MAX_LIST_SIZE = 5;
-$PAGE_NO = $_GET["pageNo"];
+echo json_encode($db->getActiveListings($_SESSION["email"]));
 
-
-$result = $db->getActiveListings($_SESSION["email"]);
-//$result[index][mySQL att]
-for($i = (($PAGE_NO - 1) * $MAX_LIST_SIZE); $i < ($PAGE_NO * $MAX_LIST_SIZE); $i++){
-   if(isset($result[$i])){
-       echo $result[$i]["good"] . "\n";
-   }
-}

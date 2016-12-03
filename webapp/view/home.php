@@ -62,11 +62,12 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
         //var JQ = $.noConflict(); //Need JQUERY.NOCONFLICT();  Otherwise prototypes methods will be overwritten
         //This removes the current active listings.
         jQuery(function ($) {
+            /*
             $(document).ready(function(){
                 $(".page-item").click(function(){
                     $(".list-group-item").remove();
                 });
-            });
+            });*/
 
             // The dollar sign will equal jQuery in this scope
             $('.modal')
@@ -194,12 +195,12 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
 
             <div class="col-md-9">
                 <div class="profile-content">
-                    <div class="list-group">
+                    <div id="list-content" class="list-group">
                         <!-- Fully automate on login -->
                         <?php $result = $db->getActiveListings($_SESSION["email"]);
                             if($result) {
                                 foreach ($result as $k => $v) {
-                                    echo "<a href=\"#\" class=\"list-group-item spacing\">" . $v["good"] . "</a>";
+                                    echo "<div class=\"list-group-item spacing\">" . $v["good"] . "</div>";
                                 }
                             }
                             else{
@@ -207,7 +208,6 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                                 <a href=\"#\">Make a new listing!</a>";
                             }
                         ?>
-                        <a href="#" id="activeListing1" class="list-group-item spacing">This is nothing to be concerned about</a>
                     </div>
                     <nav aria-label="...">
                         <ul class="pagination pagination-sm" style="position:relative; bottom:0;">
@@ -226,7 +226,12 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                                     <span class="sr-only">Next</span>
                                 </a>
                             </li>
+                            <select id="display-results" placeholder="5" onchange="updateView();">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                            </select>
                         </ul>
+
                     </nav>
                 </div>
             </div>

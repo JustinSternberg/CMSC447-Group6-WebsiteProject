@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d631cf5-4cf8-48a1-ad4d-1c02175b7a59" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/classes/Database.php" afterPath="$PROJECT_DIR$/webapp/classes/Database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/view/home.php" afterPath="$PROJECT_DIR$/webapp/view/home.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/view/js/ajax.js" afterPath="$PROJECT_DIR$/webapp/view/js/ajax.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/view/login.php" afterPath="$PROJECT_DIR$/webapp/view/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/view/js/libs.js" afterPath="$PROJECT_DIR$/webapp/view/js/libs.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/view/paginate.php" afterPath="$PROJECT_DIR$/webapp/view/paginate.php" />
     </list>
     <ignored path="CMSC447-Group6-WebsiteProject.iws" />
@@ -31,8 +31,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp/view/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
-              <caret line="89" column="52" selection-start-line="89" selection-start-column="52" selection-end-line="89" selection-end-column="52" />
+            <state relative-caret-position="240">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -51,11 +51,11 @@
       <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp/view/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="212" column="96" selection-start-line="212" selection-start-column="96" selection-end-line="212" selection-end-column="96" />
+            <state relative-caret-position="616">
+              <caret line="230" column="49" selection-start-line="230" selection-start-column="49" selection-end-line="230" selection-end-column="49" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#nav#0;n#div#0;n#div#1;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1480793467898" expanded="true" signature="401:421" ph="..." />
+                <marker date="1480800270510" expanded="true" signature="401:421" ph="..." />
               </folding>
             </state>
           </provider>
@@ -86,8 +86,8 @@
       <file leaf-file-name="libs.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp/view/js/libs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="495">
+              <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -96,8 +96,8 @@
       <file leaf-file-name="ajax.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webapp/view/js/ajax.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+            <state relative-caret-position="225">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -108,8 +108,8 @@
       <file leaf-file-name="paginate.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp/view/paginate.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
+            <state relative-caret-position="270">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -177,11 +177,11 @@
         <option value="$PROJECT_DIR$/webapp/view/css/styles.css" />
         <option value="$PROJECT_DIR$/webapp/view/css/profile.css" />
         <option value="$PROJECT_DIR$/webapp/paginate.php" />
-        <option value="$PROJECT_DIR$/webapp/view/js/libs.js" />
         <option value="$PROJECT_DIR$/webapp/classes/Database.php" />
         <option value="$PROJECT_DIR$/webapp/view/login.php" />
-        <option value="$PROJECT_DIR$/webapp/view/home.php" />
         <option value="$PROJECT_DIR$/webapp/view/paginate.php" />
+        <option value="$PROJECT_DIR$/webapp/view/js/libs.js" />
+        <option value="$PROJECT_DIR$/webapp/view/home.php" />
         <option value="$PROJECT_DIR$/webapp/view/js/ajax.js" />
       </list>
     </option>
@@ -789,12 +789,12 @@
       <workItem from="1479587464045" duration="16366000" />
       <workItem from="1479680003922" duration="11028000" />
       <workItem from="1480654924326" duration="12829000" />
-      <workItem from="1480787386134" duration="6473000" />
+      <workItem from="1480787386134" duration="12891000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72509000" />
+    <option name="totallyTimeSpent" value="78927000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1171,36 +1171,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/view/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding>
-            <marker date="1480663274754" expanded="true" signature="10:47" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/view/indexed.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="515">
           <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/view/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="89" column="52" selection-start-line="89" selection-start-column="52" selection-end-line="89" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/view/js/libs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1221,10 +1195,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/view/login.php">
+    <entry file="file://$PROJECT_DIR$/webapp/view/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/view/paginate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1247,29 +1229,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/view/home.php">
+    <entry file="file://$PROJECT_DIR$/webapp/view/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="212" column="96" selection-start-line="212" selection-start-column="96" selection-end-line="212" selection-end-column="96" />
+        <state relative-caret-position="120">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/view/js/libs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/view/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#ul#0;n#nav#0;n#div#0;n#div#1;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1480793467898" expanded="true" signature="401:421" ph="..." />
+            <marker date="1480663274754" expanded="true" signature="10:47" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/view/paginate.php">
+    <entry file="file://$PROJECT_DIR$/webapp/view/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
-          <folding />
+        <state relative-caret-position="616">
+          <caret line="230" column="49" selection-start-line="230" selection-start-column="49" selection-end-line="230" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#nav#0;n#div#0;n#div#1;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1480800270510" expanded="true" signature="401:421" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/view/js/ajax.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+        <state relative-caret-position="225">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>

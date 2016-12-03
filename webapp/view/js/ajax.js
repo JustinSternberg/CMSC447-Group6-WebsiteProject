@@ -2,8 +2,19 @@
  * Created by Josh on 10/6/2016.
  */
 var id;
+var pageNum = -1;
+var MAX_LIST_SIZE = 5;
+
+function getMaxSize(){
+    return MAX_LIST_SIZE;
+}
 
 
+function updateView(){
+    MAX_LIST_SIZE = document.getElementById("display-results").value;
+
+    page(pageNum);
+}
 
 /*page(var int);
  *Parameters(pageNo), number, which will determine which page to load
@@ -11,9 +22,9 @@ var id;
  *
  */
 function page(pageNo){
-    console.log(pageNo);
 
-    new Ajax.Request( "paginate.php",
+    pageNum = pageNo;
+     new Ajax.Request( "paginate.php",
         {
             method: "get",
             parameters: {pageNo : pageNo},
@@ -28,7 +39,25 @@ function page(pageNo){
  *       homepage with active items
  */
 function pageSuccess(ajax){
-     console.log(ajax.responseText);
+
+    var items = JSON.parse(ajax.responseText);
+    var myNode = document.getElementById("list-content");
+    while (myNode.firstChild) {
+        myNode.removeChild(myNode.firstChild);
+    }
+    for(var i = ((pageNum - 1) * MAX_LIST_SIZE); i < (pageNum * MAX_LIST_SIZE); i++) {
+        //items[index][mySQL att.]
+
+        //console.log(items[i]["good"]);
+        //populate table here.
+
+        var row = document.createElement('span');
+
+        row.className = 'list-group-item spacing';
+        row.innerHTML = items[i]["good"];
+
+        document.getElementById('list-content').appendChild(row);
+    }
 }
 
 /** pageFailure(var Ajax)
