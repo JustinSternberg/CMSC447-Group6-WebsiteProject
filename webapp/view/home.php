@@ -68,6 +68,9 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                     $(".list-group-item").remove();
                 });
             });*/
+            $(document).ready(function(){
+                page(1);
+            });
 
             // The dollar sign will equal jQuery in this scope
             $('.modal')
@@ -193,24 +196,14 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                 </div>
             </div>
 
-            <div class="col-md-9">
+            <div class="col-md-9" >
                 <div class="profile-content">
                     <div id="list-content" class="list-group">
-                        <!-- Fully automate on login -->
-                        <?php $result = $db->getActiveListings($_SESSION["email"]);
-                            if($result) {
-                                foreach ($result as $k => $v) {
-                                    echo "<div class=\"list-group-item spacing\">" . $v["good"] . "</div>";
-                                }
-                            }
-                            else{
-                                echo "There appears to be nothing here.<br/>
-                                <a href=\"#\">Make a new listing!</a>";
-                            }
-                        ?>
+                       <!-- Dynamic content goes here -->
                     </div>
-                    <nav aria-label="...">
-                        <ul class="pagination pagination-sm" style="position:relative; bottom:0;">
+
+                    <nav aria-label="..." style="position:absolute;left:40%; bottom:0;margin:0 auto;">
+                        <ul class="pagination pagination-sm" >
                             <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
@@ -226,13 +219,16 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                                     <span class="sr-only">Next</span>
                                 </a>
                             </li>
-                            <select id="display-results" placeholder="5" onchange="updateView();">
+
+                            <select id="display-results" class="fit-paginator" placeholder="5" onchange="updateView();">
                                 <option value="5">5</option>
                                 <option value="10">10</option>
                             </select>
+
                         </ul>
 
                     </nav>
+
                 </div>
             </div>
         </div>

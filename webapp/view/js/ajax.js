@@ -41,22 +41,27 @@ function page(pageNo){
 function pageSuccess(ajax){
 
     var items = JSON.parse(ajax.responseText);
-    var myNode = document.getElementById("list-content");
-    while (myNode.firstChild) {
-        myNode.removeChild(myNode.firstChild);
+    if(items.length > 0) {
+        var myNode = document.getElementById("list-content");
+        while (myNode.firstChild) {
+            myNode.removeChild(myNode.firstChild);
+        }
+        for (var i = ((pageNum - 1) * MAX_LIST_SIZE); i < (pageNum * MAX_LIST_SIZE); i++) {
+            //items[index][mySQL att.]
+
+            //console.log(items[i]["good"]);
+            //populate table here.
+
+            var row = document.createElement('span');
+
+            row.className = 'list-group-item spacing';
+            row.innerHTML = items[i]["good"];
+
+            document.getElementById('list-content').appendChild(row);
+        }
     }
-    for(var i = ((pageNum - 1) * MAX_LIST_SIZE); i < (pageNum * MAX_LIST_SIZE); i++) {
-        //items[index][mySQL att.]
-
-        //console.log(items[i]["good"]);
-        //populate table here.
-
-        var row = document.createElement('span');
-
-        row.className = 'list-group-item spacing';
-        row.innerHTML = items[i]["good"];
-
-        document.getElementById('list-content').appendChild(row);
+    else{
+        document.getElementById("list-content").innerHTML = "There appears to be nothing here.<br/> <a>Create Listing?</a>";
     }
 }
 

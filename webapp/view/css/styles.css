@@ -91,3 +91,7 @@
     width:50px !important;
 }
 
+.fit-paginator{
+    height:100%;
+    padding:4px;
+}
