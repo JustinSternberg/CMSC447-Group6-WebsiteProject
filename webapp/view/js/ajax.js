@@ -52,8 +52,9 @@ function pageSuccess(ajax){
             var row = document.createElement('span');
 
             row.className = 'list-group-item spacing';
-
-            row.innerHTML = "<span style='float:left;' onclick='alert(\"Edit\");' class='glyphicon glyphicon-pencil listing-left hov-blue'></span>" +
+            row.innerHTML = "<a class='avis portfolio-link' data-toggle='modal' onclick='popEdit(\"" + items[i]["unique"] + "\");' href='#editItem'>" +
+                                "<span style='float:left;' class='glyphicon glyphicon-pencil listing-left hov-blue'></span>" +
+                            "</a>" +
                             "<span style='float:left;' onclick='alert(\"Remove\");' class='glyphicon glyphicon-remove listing-left hov-red'></span>" +
                             items[i]["good"];
 
@@ -63,6 +64,10 @@ function pageSuccess(ajax){
     else{
         document.getElementById("list-content").innerHTML = "There appears to be nothing here.<br/> <a>Create Listing?</a>";
     }
+}
+
+function popEdit(id){
+    console.log(id + " : SUCCESS");
 }
 
 /** pageFailure(var Ajax)
@@ -160,9 +165,6 @@ function populate(code){
  */
 function worked(ajax){
     var res = ajax.responseText;
-
-    console.log(res);
-
 }
 
 /**

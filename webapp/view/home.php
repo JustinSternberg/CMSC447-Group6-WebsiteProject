@@ -200,6 +200,7 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                 <div class="profile-content">
                     <div id="list-content" class="list-group">
                        <!-- Dynamic content goes here -->
+
                     </div>
 
                     <nav aria-label="..." style="position:absolute;left:40%; bottom:0;margin:0 auto;">
@@ -238,7 +239,29 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
     <br>
 
 </header>
-
+<div class="modal fade" id="editItem"  role="dialog" aria-hidden="true">
+    <div class="modal-content" id="create">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container" style="width:inherit;height: inherit;">
+            <div class="row">
+                <div class="modal-body fit" >
+                    <h2 style="text-align:center;width:inherit !important;">Item Edit</h2>
+                    <hr class="star-primary">
+                    <form action="register.php" method="post" accept-charset="UTF-8">
+                        <!-- Item Edit Content goes here -->
+                        
+                        <button value="Register" type="submit" onclick="return validate();">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Custom JS Files -->
 <script src="js/libs.js"></script>
