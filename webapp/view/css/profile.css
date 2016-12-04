@@ -158,3 +158,16 @@ label.star:before {
     content: '\f006';
     font-family: FontAwesome;
 }
+
+.listing-left{
+    position:relative !important;
+    float:left !important;
+    margin-right:5px;
+}
+.hov-red:hover{
+    color:#d9534f;
+}
+
+.hov-blue:hover{
+    color:#428bca;
+}

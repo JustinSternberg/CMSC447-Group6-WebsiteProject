@@ -47,15 +47,15 @@ function pageSuccess(ajax){
             myNode.removeChild(myNode.firstChild);
         }
         for (var i = ((pageNum - 1) * MAX_LIST_SIZE); i < (pageNum * MAX_LIST_SIZE); i++) {
+
             //items[index][mySQL att.]
-
-            //console.log(items[i]["good"]);
-            //populate table here.
-
             var row = document.createElement('span');
 
             row.className = 'list-group-item spacing';
-            row.innerHTML = items[i]["good"];
+
+            row.innerHTML = "<span style='float:left;' onclick='alert(\"Edit\");' class='glyphicon glyphicon-pencil listing-left hov-blue'></span>" +
+                            "<span style='float:left;' onclick='alert(\"Remove\");' class='glyphicon glyphicon-remove listing-left hov-red'></span>" +
+                            items[i]["good"];
 
             document.getElementById('list-content').appendChild(row);
         }

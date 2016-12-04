@@ -181,9 +181,9 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                                     Account Settings </a>
                             </li>
                             <li>
-                                <a href="#" target="_blank">
-                                    <i class="glyphicon glyphicon-ok"></i>
-                                    Tasks </a>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-plus"></i>
+                                    Add Item </a>
                             </li>
                             <li>
                                 <a href="#">
