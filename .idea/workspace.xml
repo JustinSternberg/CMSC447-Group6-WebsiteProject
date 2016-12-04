@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d631cf5-4cf8-48a1-ad4d-1c02175b7a59" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/view/css/profile.css" afterPath="$PROJECT_DIR$/webapp/view/css/profile.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/view/home.php" afterPath="$PROJECT_DIR$/webapp/view/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/view/js/ajax.js" afterPath="$PROJECT_DIR$/webapp/view/js/ajax.js" />
-    </list>
+    <list default="true" id="9d631cf5-4cf8-48a1-ad4d-1c02175b7a59" name="Default" comment="" />
     <ignored path="CMSC447-Group6-WebsiteProject.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -823,12 +818,12 @@
       <workItem from="1479680003922" duration="11028000" />
       <workItem from="1480654924326" duration="12829000" />
       <workItem from="1480787386134" duration="17235000" />
-      <workItem from="1480815112567" duration="2649000" />
+      <workItem from="1480815112567" duration="2693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85920000" />
+    <option name="totallyTimeSpent" value="85964000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
