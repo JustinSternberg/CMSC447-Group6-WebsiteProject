@@ -53,10 +53,12 @@ class DB {
             $stmt = $conn->prepare("select password from $table WHERE email = '" . $ID . "'");
             $stmt->execute();
             $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
             $result = $stmt->fetchAll();
 
             $conn = null;
-            return $pass === $result[0]["password"];
+
+            return $result[0]["password"];
         }
         catch(PDOException $e){
             echo $e;
@@ -353,6 +355,7 @@ class DB {
             $desc = $data["desc"];
 
             $stmt->execute();
+
             $conn = null;
             return true;
         }
@@ -363,6 +366,26 @@ class DB {
 
     }
 
+    public function getItemTotal(){
+        $table = "services";
+
+        try {
+            $conn = $this->connect();
+            $stmt = $conn->prepare(" SELECT * FROM $table ORDER BY itemID DESC LIMIT 1");
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll();
+
+            $conn = null;
+
+            return $result;
+        }
+        catch(PDOException $e){
+            echo $e;
+            return null;
+        }
+       
+    }
 
     public function submit($data){
         $table = "LIBRARY_Student_Apps";

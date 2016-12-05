@@ -3,9 +3,15 @@ require_once(dirname(__FILE__) . '/../load.php');
 session_start();
 $db = new DB();
 //Parse and flush $_POST !!!!!
-$_SESSION["auth"] = $db->authorize($_POST["email"], $_POST["password"]);
+$pass = $db->authorize($_POST["email"], $_POST["password"]);
 $_SESSION["name"] = $db->getName($_POST["email"]);
 $_SESSION["email"] = $_POST["email"];
+
+$_SESSION["auth"] = false;
+if ( hash_equals($pass, crypt($_POST["password"], $pass)) ) {
+    $_SESSION["auth"] = true;
+}
+
 
 /**
  * Created by IntelliJ IDEA.

@@ -32,12 +32,15 @@ $id =  $_SESSION["campusID"];
 $dat["campusID"] = $id;
 $dat["type"] = $imageFileType;
 
+$result =  $db->getItemTotal();
 
 $entries =  sizeof($db->getActiveListings($_SESSION["email"])) . "<br>";
-$dat["nextIt"] = ($entries += 1);
-$_POST["nextIt"] = ($entries += 1);
+$dat["nextIt"] = $result[0]["itemID"] + 1;
+$_POST["nextIt"] = $result[0]["itemID"] + 1;
 $_POST["campusID"] = $id;
-$_POST["imgref"] = $id . $entries;
+
 $db->addItem($_POST);
-$db->linkImage($dat);
+if($uploadOk > 0) {
+    $db->linkImage($dat);
+}
 header("Location:home.php");
