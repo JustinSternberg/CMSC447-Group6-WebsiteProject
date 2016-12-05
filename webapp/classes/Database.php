@@ -228,12 +228,33 @@ class DB {
         }
     }
 
+    public function imageExists($id){
+        $table = "images";
+        try {
+            $conn = $this->connect();
+            $stmt = $conn->prepare("SELECT * FROM $table WHERE ref = '" . $id . "'");
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll();
+
+            $conn = null;
+            if(sizeof($result) > 0) {
+                return true;
+            }
+            return false;
+        }
+        catch(PDOException $e){
+            echo $e;
+            return null;
+        }
+    }
+
     public function linkImage($data){
         $table = "images";
 
         try {
             $conn = $this->connect();
-
+            //update otherwise insert
             $stmt = $conn->prepare("INSERT INTO images (image, ref, `type`)
                                 VALUES (:image, :ref, :type)");
 
@@ -241,8 +262,15 @@ class DB {
             $stmt->bindParam(':image', $img);
             $stmt->bindParam(':type', $type);
 
-            $campusID = strtoupper($data["campusID"]);
-            $unique = $campusID . "_" . $data["nextIt"];
+            if(!isset($data["email"])) {
+                $campusID = strtoupper($data["campusID"]);
+                $unique = $campusID . "_" . $data["nextIt"];
+            }
+            else{
+
+                $unique = $data["email"];
+                unset($data["email"]);
+            }
             $img = $data["img"];
             $type = $data["type"];
 
@@ -253,6 +281,25 @@ class DB {
         catch(PDOException $e){
             echo $e;
             return false;
+        }
+    }
+
+    public function getImage($id){
+        $table = "images";
+        try {
+            $conn = $this->connect();
+            $stmt = $conn->prepare("SELECT * FROM $table WHERE ref = '" . $id . "'");
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll();
+
+            $conn = null;
+
+            return $result;
+        }
+        catch(PDOException $e){
+            echo $e;
+            return null;
         }
     }
 

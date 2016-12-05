@@ -85,7 +85,7 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
 
 </head>
 
-<body id="page-top" class="index" bgcolor="#" style="overflow:hidden;">
+<body id="page-top" class="index" bgcolor="#" >
 <!-- Navigation -->
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
     <div class="container">
@@ -149,8 +149,8 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                 <div class="profile-sidebar">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic" id="heat">
-                        <img src="img/profiles/1.jpg" class="img-thumbnail picture hidden-xs" alt=""><br />
-                        <a href="#" style="font-size:.8em;">Change picture?</a>
+                        <img src='img/profiles/1.jpg' class='img-thumbnail picture hidden-xs' alt=''><br />
+                        <a data-toggle='modal' href='#changeProfile' style="font-size:.8em;">Change picture?</a>
                     </div>
                     <!-- END SIDEBAR USERPIC -->
                     <!-- SIDEBAR USER TITLE -->
@@ -227,20 +227,41 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                                 <option value="5">5</option>
                                 <option value="10">10</option>
                             </select>
-
                         </ul>
-
                     </nav>
-
                 </div>
             </div>
         </div>
-
     </div>
     <br>
     <br>
 
 </header>
+<div class="modal fade" id="changeProfile"  role="dialog" aria-hidden="true">
+    <div class="modal-content" id="create">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container" style="width:inherit;height: inherit;">
+            <div class="row">
+                <div class="modal-body fit" >
+                    <h2 style="text-align:center;width:inherit !important;">Item Edit</h2>
+                    <hr class="star-primary">
+                    <form action="updateProfile.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+                        <!-- Item Edit Content goes here -->
+                        <label>
+                            Image upload: <input type="file" name="fileToUpload" id="fileToUpload">
+                        </label>
+                        <button style="margin:0 auto;" value="Register" type="submit" onclick="return validate();">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="modal fade" id="editItem"  role="dialog" aria-hidden="true">
     <div class="modal-content" id="create">
         <div class="close-modal" data-dismiss="modal">
@@ -281,6 +302,7 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
         </div>
     </div>
 </div>
+
 
 <!-- Custom JS Files -->
 <script src="js/libs.js"></script>
