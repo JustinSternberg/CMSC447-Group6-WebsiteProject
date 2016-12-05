@@ -107,6 +107,9 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                     <a href="index.php">Marketplace</a>
                 </li>
                 <li class="page-scroll">
+                    <a href="#portfolio">Shop</a>
+                </li>
+                <li class="page-scroll">
                     <a href="#about">Service</a>
                 </li>
                 <li class="page-scroll">
