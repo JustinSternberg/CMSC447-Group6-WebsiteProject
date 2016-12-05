@@ -9,12 +9,35 @@ require_once(dirname(__FILE__) . '/../load.php');
 session_start();
 $db = new DB();
 
-$id =  $_SESSION["campusID"];
-$entries =  sizeof($db->getActiveListings($_SESSION["email"])) . "<br>";
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+//echo $imageFileType;
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+}
+//echo '<img src="data:image/gif;base64,'.base64_encode( file_get_contents($_FILES["fileToUpload"]["tmp_name"] )).'"/>';
 
+$dat["img"] = file_get_contents($_FILES["fileToUpload"]["tmp_name"]);
+$id =  $_SESSION["campusID"];
+$dat["campusID"] = $id;
+$dat["type"] = $imageFileType;
+
+
+$entries =  sizeof($db->getActiveListings($_SESSION["email"])) . "<br>";
+$dat["nextIt"] = ($entries += 1);
 $_POST["nextIt"] = ($entries += 1);
 $_POST["campusID"] = $id;
 $_POST["imgref"] = $id . $entries;
 $db->addItem($_POST);
-
+$db->linkImage($dat);
 header("Location:home.php");

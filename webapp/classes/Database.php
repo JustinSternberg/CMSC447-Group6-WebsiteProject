@@ -195,7 +195,7 @@ class DB {
             $stmt->execute();
             $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $result = $stmt->fetchAll();
-
+            
             $conn = null;
             return $result;
         }
@@ -228,6 +228,34 @@ class DB {
         }
     }
 
+    public function linkImage($data){
+        $table = "images";
+
+        try {
+            $conn = $this->connect();
+
+            $stmt = $conn->prepare("INSERT INTO images (image, ref, `type`)
+                                VALUES (:image, :ref, :type)");
+
+            $stmt->bindParam(':ref', $unique);
+            $stmt->bindParam(':image', $img);
+            $stmt->bindParam(':type', $type);
+
+            $campusID = strtoupper($data["campusID"]);
+            $unique = $campusID . "_" . $data["nextIt"];
+            $img = $data["img"];
+            $type = $data["type"];
+
+            $stmt->execute();
+            $conn = null;
+            return true;
+        }
+        catch(PDOException $e){
+            echo $e;
+            return false;
+        }
+    }
+
     public function addItem($data){
         $table = "services";
 
@@ -252,7 +280,6 @@ class DB {
             $meta = $data["meta"];
             $unique = $campusID . "_" . $data["nextIt"];
             $desc = $data["desc"];
-
 
             $stmt->execute();
             $conn = null;

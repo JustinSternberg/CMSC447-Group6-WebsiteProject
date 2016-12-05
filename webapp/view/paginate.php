@@ -19,3 +19,19 @@ $db = new DB();
 
 echo json_encode($db->getActiveListings($_SESSION["email"]));
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

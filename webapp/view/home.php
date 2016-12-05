@@ -251,7 +251,7 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                 <div class="modal-body fit" >
                     <h2 style="text-align:center;width:inherit !important;">Item Edit</h2>
                     <hr class="star-primary">
-                    <form action="addItem.php" method="post" accept-charset="UTF-8">
+                    <form action="addItem.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
                         <!-- Item Edit Content goes here -->
                         <label> Title:
                             <input type="text" name="good" />
@@ -268,8 +268,10 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                         <label> Item Description:
                             <textarea name="desc" placeholder="Enter item description"></textarea>
                         </label>
-                        Image upload:<br>
-                        <button value="Register" type="submit" onclick="return validate();">Submit</button>
+                        <label>
+                            Image upload: <input type="file" name="fileToUpload" id="fileToUpload">
+                        </label>
+                        <button style="margin:0 auto;" value="Register" type="submit" onclick="return validate();">Submit</button>
                     </form>
                 </div>
             </div>
