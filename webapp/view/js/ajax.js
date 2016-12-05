@@ -9,7 +9,6 @@ function getMaxSize(){
     return MAX_LIST_SIZE;
 }
 
-
 function updateView(){
     MAX_LIST_SIZE = document.getElementById("display-results").value;
 

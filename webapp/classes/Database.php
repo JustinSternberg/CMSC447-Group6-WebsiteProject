@@ -228,6 +228,44 @@ class DB {
         }
     }
 
+    public function addItem($data){
+        $table = "services";
+
+        try {
+            $conn = $this->connect();
+
+            $stmt = $conn->prepare("INSERT INTO services (campusID, type, good, price, meta, `unique`, `desc`)
+                                VALUES (:campusID, :type, :good, :price, :meta, :unique, :desc)");
+            $stmt->bindParam(':campusID', $campusID);
+            $stmt->bindParam(':type', $type);
+            $stmt->bindParam(':good', $good);
+            $stmt->bindParam(':price', $price);
+            $stmt->bindParam(':meta', $meta);
+            $stmt->bindParam(':unique', $unique);
+            $stmt->bindParam(':desc', $desc);
+
+
+            $campusID = strtoupper($data["campusID"]);
+            $type = $data["type"];
+            $good = $data["good"];
+            $price = $data["price"];
+            $meta = $data["meta"];
+            $unique = $campusID . "_" . $data["nextIt"];
+            $desc = $data["desc"];
+
+
+            $stmt->execute();
+            $conn = null;
+            return true;
+        }
+        catch(PDOException $e){
+            echo $e;
+            return false;
+        }
+
+    }
+
+
     public function submit($data){
         $table = "LIBRARY_Student_Apps";
 

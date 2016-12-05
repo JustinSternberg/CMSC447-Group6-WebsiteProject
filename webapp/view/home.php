@@ -86,7 +86,6 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
 </head>
 
 <body id="page-top" class="index" bgcolor="#" style="overflow:hidden;">
-
 <!-- Navigation -->
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
     <div class="container">
@@ -181,8 +180,8 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                                     Account Settings </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <i class="glyphicon glyphicon-plus"></i>
+                                <a  data-toggle='modal' href='#editItem'>
+                                        <i class="glyphicon glyphicon-plus"></i>
                                     Add Item </a>
                             </li>
                             <li>
@@ -252,9 +251,24 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                 <div class="modal-body fit" >
                     <h2 style="text-align:center;width:inherit !important;">Item Edit</h2>
                     <hr class="star-primary">
-                    <form action="register.php" method="post" accept-charset="UTF-8">
+                    <form action="addItem.php" method="post" accept-charset="UTF-8">
                         <!-- Item Edit Content goes here -->
-                        
+                        <label> Title:
+                            <input type="text" name="good" />
+                        </label>
+                        <label> Price
+                            <input type="text" name="price" />
+                        </label>
+                        <label> Tags:
+                            <textarea name="meta" placeholder="Enter tags here"></textarea>
+                        </label>
+                        <label> Type:
+                            <input type="text" name="type" />
+                        </label>
+                        <label> Item Description:
+                            <textarea name="desc" placeholder="Enter item description"></textarea>
+                        </label>
+                        Image upload:<br>
                         <button value="Register" type="submit" onclick="return validate();">Submit</button>
                     </form>
                 </div>
