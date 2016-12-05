@@ -256,6 +256,30 @@ class DB {
         }
     }
 
+    public function removeItem($id){
+        //Remove image from images too.
+        $table = "services";
+
+        try {
+            $conn = $this->connect();
+            $stmt = $conn->prepare("DELETE FROM services WHERE `unique`='" . $id . "'");
+            $stmt->execute();
+
+            $stmt = $conn->prepare("DELETE FROM images WHERE ref='" . $id . "'");
+            $stmt->execute();
+
+
+            $conn = null;
+
+            return true;
+        }
+        catch(PDOException $e){
+            echo $e;
+            return null;
+        }
+
+    }
+
     public function addItem($data){
         $table = "services";
 

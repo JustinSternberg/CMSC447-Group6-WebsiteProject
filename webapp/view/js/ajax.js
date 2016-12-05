@@ -54,7 +54,7 @@ function pageSuccess(ajax){
             row.innerHTML = "<a class='avis portfolio-link' data-toggle='modal' onclick='popEdit(\"" + items[i]["unique"] + "\");' href='#editItem'>" +
                                 "<span style='float:left;' class='glyphicon glyphicon-pencil listing-left hov-blue'></span>" +
                             "</a>" +
-                            "<span style='float:left;' onclick='alert(\"Remove\");' class='glyphicon glyphicon-remove listing-left hov-red'></span>" +
+                            "<span style='float:left;' onclick='removeRow(\"" + items[i]["unique"] + "\");' class='glyphicon glyphicon-remove listing-left hov-red'></span>" +
                             items[i]["good"];
 
             document.getElementById('list-content').appendChild(row);
@@ -63,6 +63,26 @@ function pageSuccess(ajax){
     else{
         document.getElementById("list-content").innerHTML = "There appears to be nothing here.<br/> <a>Create Listing?</a>";
     }
+}
+
+/**
+ * This function calls Ajax to remove a row from the DB
+ * @param id
+ */
+function removeRow(id){
+    new Ajax.Request( "removeItem.php",
+        {
+            method: "get",
+            parameters: {id : id},
+            onSuccess: removeSuccess
+        }
+    );
+}
+
+function removeSuccess(ajax){
+    console.log(ajax.responseText);
+    page(1);
+    //bootstrap alert, item removed successfully.
 }
 
 function popEdit(id){
