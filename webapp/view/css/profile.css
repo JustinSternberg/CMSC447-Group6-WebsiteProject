@@ -192,3 +192,11 @@ label.star:before {
 }
 
 
+.mmm{
+    position:relative;left:-70%;color:#d43f3a!important; display:inline-block;
+}
+
+.nnn{
+    position:relative;
+    margin:0 auto;
+}

@@ -286,7 +286,7 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                        <!-- Dynamic content goes here -->
 
                     </div>
-
+                    <br><br>
                     <nav aria-label="..." style="position:absolute;left:40%; bottom:0;margin:0 auto;">
                         <ul class="pagination pagination-sm" >
                             <li class="page-item">
