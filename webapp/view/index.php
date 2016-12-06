@@ -70,11 +70,11 @@
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
+            <div class="navbar-header page-scroll" >
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a style="margin-right:100px;" class="navbar-brand" href="#page-top">UMBC Marketplace</a>
+                <a  class="navbar-brand" style="margin-left:-200px;" href="#page-top">UMBC Marketplace</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
