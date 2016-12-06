@@ -155,6 +155,28 @@ if(!$_SESSION["auth"]){
 
 </header>
 
+<div class="modal fade" id="rate"  role="dialog" aria-hidden="true">
+    <div class="modal-content" id="create">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container" style="width:inherit;height: inherit;">
+            <div class="row">
+                <div class="modal-body fit" >
+                    <h2 style="text-align:center;width:inherit !important;">Account Rate</h2>
+                    <hr class="star-primary">
+                    <form action="register.php" method="post" accept-charset="UTF-8">
+                        
+                        <button value="Register" type="submit" onclick="return validate();">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>

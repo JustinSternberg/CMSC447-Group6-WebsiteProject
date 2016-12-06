@@ -49,7 +49,10 @@ function popListings($page){
                          </div>
                          <div class=\"col-xs-12 col-md-6\">
                          <!-- Finish linking this pls-->
-                          <a class=\"btn btn-success\" onclick='updateCart();' >Add to cart</a>
+                          <a class=\"btn btn-success\" onclick='updateCart();' >Add to cart</a><br>
+                         
+                             Listed by:  <a style='color:blue !important;' data-toggle='modal' onclick='popRate(\"" . $v["campusID"] . "\")' href='#rate'>" . $db->getUsername($v["campusID"]) . "
+                          </a>
                          </div>
                      </div>
                  </div>

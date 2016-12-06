@@ -11,6 +11,9 @@
     if($id == "campusID"){
         $result = $db->entryExists($val, "campusID");
     }
+    if($id == "username"){
+        $result = $db->entryExists($val, "username");
+    }
 
     if($result){
         echo 1;

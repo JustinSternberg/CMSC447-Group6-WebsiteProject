@@ -16,6 +16,16 @@ function updateView(){
 }
 
 
+function popRate(id){
+    new Ajax.Request( "rate.php",
+        {
+            method: "get",
+            parameters: {id : id},
+            onSuccess: cartSuccess
+        }
+    );
+}
+
 function updateCart(){
     var id = 1;
     new Ajax.Request( "cart.php",
@@ -147,6 +157,18 @@ function check(ID){
             }
         );
     }
+    else if(ID == "username"){
+        //Sanitize before
+        new Ajax.Request( "check.php",
+            {
+                method: "get",
+                parameters: {ID : ID,
+                    val : val},
+                onSuccess: usernameSuccess,
+                onFailure: checkFailure
+            }
+        );
+    }
 }
 
 /*
@@ -180,6 +202,19 @@ function campusSuccess(ajax){
     else{
         document.getElementById("campusIDCheck").className = "glyphicon glyphicon-ok-circle";
         document.getElementById("campusIDCheck").style.color = "green";
+    }
+}
+
+function usernameSuccess(ajax){
+    document.getElementById("usernameCheck").className = "";
+    if(ajax.responseText == 1){
+        document.getElementById("usernameCheck").className = "glyphicon glyphicon-remove-circle";
+        document.getElementById("usernameCheck").style.color = "red";
+
+    }
+    else{
+        document.getElementById("usernameCheck").className = "glyphicon glyphicon-ok-circle";
+        document.getElementById("usernameCheck").style.color = "green";
     }
 }
 

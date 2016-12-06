@@ -174,6 +174,30 @@ class DB {
         }
     }
 
+    public function getUsername($ID){
+        $table = "user_accounts";
+        $ID = strtoupper($ID);
+        try {
+            $conn = $this->connect();
+            $stmt = $conn->prepare("SELECT * FROM $table WHERE campusID = '" . $ID . "'");
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll();
+
+            $conn = null;
+
+            foreach ($result as $k => $v) {
+                return $v["username"];
+            }
+
+            return $result;
+        }
+        catch(PDOException $e){
+            echo $e;
+            return null;
+        }
+    }
+
     public function getAllListings($ID){
         //$ID will be books, electronics, food, services, events...
         $table = "services";
@@ -408,25 +432,24 @@ class DB {
     }
 
     public function submit($data){
-        $table = "LIBRARY_Student_Apps";
-
         try {
             $conn = $this->connect();
 
-            $stmt = $conn->prepare("INSERT INTO user_accounts (lName, fName, email, campusID, password)
-                                VALUES (:lName, :fName, :email, :campusID, :password)");
+            $stmt = $conn->prepare("INSERT INTO user_accounts (lName, fName, email, campusID, password, username)
+                                VALUES (:lName, :fName, :email, :campusID, :password, :username)");
             $stmt->bindParam(':lName', $lastname);
             $stmt->bindParam(':fName', $firstname);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':campusID', $campusID);
             $stmt->bindParam(':password', $password);
-
+            $stmt->bindParam(':username', $username);
 
             $lastname = $data["lName"];
             $firstname = $data["fName"];
             $email = $data["email"];
             $campusID = strtoupper($data["campusID"]);
             $password = $data["password"];
+            $username = $data["username"];
 
             $stmt->execute();
            

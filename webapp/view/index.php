@@ -2,7 +2,7 @@
     require_once(dirname(__FILE__) . '/../load.php');
     session_start();
     $db = new DB();
-   
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -408,6 +408,9 @@
                             <label>Last name:<br /><input name="lName" id="lName" type="text" placeholder="Last name"/></label>
                             <label>UMBC ID:<br /><input name="campusID" id="campusID" type="text" onkeyup="check('campusID');" placeholder="Campus ID"/>
                                 <span id="campusIDCheck"></span>
+                            </label><br />
+                            <label>Username:<br /><input name="username" id="username" type="text" onkeyup="check('username');" placeholder="Username"/>
+                                <span id="usernameCheck"></span>
                             </label><br />
                             <label>Preferred email:<br /><input name="email" id="emailIn" type="text" onkeyup="check('emailIn');" placeholder="email"/>
                                 <span id="emailCheck"></span>
