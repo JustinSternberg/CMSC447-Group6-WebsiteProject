@@ -31,9 +31,10 @@ function popListings($page){
 
     if($result) {
         foreach ($result as $v) {
+            $id = $v["good"];
             $img = $db->getImage($v["unique"]);
             $src = '<img class="group list-group-image"   src="data:image/' . $img[0]["type"] . ';base64,' . base64_encode($img[0]["image"]) . '"/>';
-            echo "<div class=\"item  col-xs-4 col-lg-4\">  
+            echo "<div id='$id' class=\"item  col-xs-4 col-lg-4\">
              <div class=\"thumbnail\" style='padding:20px;'>  
               $src
              
@@ -50,8 +51,7 @@ function popListings($page){
                          <div class=\"col-xs-12 col-md-6\">
                          <!-- Finish linking this pls-->
                           <a class=\"btn btn-success\" onclick='updateCart();' >Add to cart</a><br>
-                         
-                             Listed by:  <a style='color:blue !important;' data-toggle='modal' onclick='popRate(\"" . $v["campusID"] . "\")' href='#rate'>" . $db->getUsername($v["campusID"]) . "
+    Listed by:  <a style='color:blue !important;' data-toggle='modal' onclick='popRate(\"" . $v["campusID"] . "\")' href='#rate'>" . $db->getUsername($v["campusID"]) . "
                           </a>
                          </div>
                      </div>
@@ -63,5 +63,52 @@ function popListings($page){
     else{
         echo "There appears to be nothing here.<br/> " .
         "<ahref='home.php'>Create Listing?</a>";
+    }
+}
+
+function searchPop($term){
+    $db = new DB();
+    setlocale(LC_MONETARY, 'en_US');
+
+    $result = $db->getSearchResults();
+
+     if($result) {
+        foreach ($result as $v) {
+            //checks if results are in the meta or title
+
+            if (strpos(strtolower($v["meta"]), $term) !== false || strpos(strtolower($v["good"]), $term) !== false) {
+                $id = $v["good"];
+                $img = $db->getImage($v["unique"]);
+                $src = '<img class="group list-group-image"   src="data:image/' . $img[0]["type"] . ';base64,' . base64_encode($img[0]["image"]) . '"/>';
+                echo "<div id='$id' class=\"item  col-xs-4 col-lg-4\">
+                 <div class=\"thumbnail\" style='padding:20px;'>  
+                  $src
+                 
+                  
+                     <div class=\"caption\">
+                     <h4 class=\"group inner list-group-item-heading\">" . $v["good"] . "</h4>
+                     <p class=\"group inner list-group-item-text\">
+                     " . $v["desc"] . "   
+                     </p>
+                         <div class=\"row\">
+                             <div class=\"col-xs-12 col-md-6\">
+                             <p class=\"lead\">$" . money_format('%i', $v["price"]) . "</p>
+                             </div>
+                             <div class=\"col-xs-12 col-md-6\">
+                             <!-- Finish linking this pls-->
+                              <a class=\"btn btn-success\" onclick='updateCart();' >Add to cart</a><br>
+        Listed by:  <a style='color:blue !important;' data-toggle='modal' onclick='popRate(\"" . $v["campusID"] . "\")' href='#rate'>" . $db->getUsername($v["campusID"]) . "
+                              </a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            </div>";
+            }
+        }
+    }
+    else{
+        echo "There appears to be nothing here.<br/> " .
+            "<ahref='home.php'>Create Listing?</a>";
     }
 }

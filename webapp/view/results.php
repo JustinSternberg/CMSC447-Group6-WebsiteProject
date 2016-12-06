@@ -1,16 +1,14 @@
 <?php
-require_once(dirname(__FILE__) . '/../load.php');
-require_once("libs.php");
-session_start();
-if(!$_SESSION["auth"]){
-    header("Location:logout.php");
-}
 /**
  * Created by IntelliJ IDEA.
  * User: Josh
- * Date: 11/6/2016
- * Time: 5:57 PM
+ * Date: 12/5/2016
+ * Time: 10:34 PM
  */
+require_once(dirname(__FILE__) . '/../load.php');
+require_once("libs.php");
+session_start();
+$db = new DB();
 
 ?>
 <!DOCTYPE html>
@@ -74,13 +72,6 @@ if(!$_SESSION["auth"]){
                 $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item ');$('#products .item').addClass('grid-group-item');});
             });
 
-
-            $(document).ready(function() {
-                $("#search_field").keyup(function() {
-                    var search = $.trim(this.value);
-                    hide_divs(search);
-                });
-            });
         });
 
     </script>
@@ -160,7 +151,7 @@ if(!$_SESSION["auth"]){
         </div>
         <div id="products" class="row list-group">
             <!-- Dynamic Content goes here-->
-            <?php popListings("books")?>
+            <?php searchPop($_POST["search"])?>
         </div>
     </div>
 

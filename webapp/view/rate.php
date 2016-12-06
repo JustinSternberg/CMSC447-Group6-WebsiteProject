@@ -8,3 +8,9 @@
 require_once(dirname(__FILE__) . '/../load.php');
 session_start();
 $db = new DB();
+
+/**
+ * Get user image, name, avg rating and 5 star rating system.
+ */
+
+$id = $_GET["id"];

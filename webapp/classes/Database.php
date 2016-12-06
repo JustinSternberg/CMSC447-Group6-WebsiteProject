@@ -218,6 +218,25 @@ class DB {
         }
     }
 
+    public function getSearchResults(){
+        $table = "services";
+        try {
+            $conn = $this->connect();
+            $stmt = $conn->prepare("SELECT * FROM $table");
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll();
+
+            $conn = null;
+
+            return $result;
+        }
+        catch(PDOException $e){
+            echo $e;
+            return null;
+        }
+    }
+
     public function getActiveListings($ID){
         $table = "user_accounts";
         $ID = strtoupper($ID);

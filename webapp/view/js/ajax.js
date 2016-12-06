@@ -16,15 +16,29 @@ function updateView(){
 }
 
 
+/**
+ * This is used to populate the modal with user data
+ * so the user can rate them.
+ * @param id
+ */
 function popRate(id){
     new Ajax.Request( "rate.php",
         {
             method: "get",
             parameters: {id : id},
-            onSuccess: cartSuccess
+            onSuccess: rateSuccess
         }
     );
 }
+
+function rateSuccess(ajax){
+    /*
+     * just load username, and 5 star rating system
+     *
+     */
+    console.log(ajax.responseText);
+}
+
 
 function updateCart(){
     var id = 1;

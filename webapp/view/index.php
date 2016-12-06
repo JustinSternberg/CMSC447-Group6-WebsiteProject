@@ -186,7 +186,20 @@
                 <div class="col-lg-12 text-center">
                     <h2>Marketplace</h2>
                     <hr class="star-primary">
+
                 </div>
+                <form action="results.php" method="post" class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="Search...">
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-default">
+								<span class="glyphicon glyphicon-search">
+									<span class="sr-only">Search...</span>
+								</span>
+							</button>
+						</span>
+                    </div>
+                </form>
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
