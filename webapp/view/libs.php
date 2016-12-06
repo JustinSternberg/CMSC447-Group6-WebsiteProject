@@ -49,7 +49,7 @@ function popListings($page){
                          </div>
                          <div class=\"col-xs-12 col-md-6\">
                          <!-- Finish linking this pls-->
-                          <a class=\"btn btn-success\" href=\"#\">Add to cart</a>
+                          <a class=\"btn btn-success\" onclick='updateCart();' >Add to cart</a>
                          </div>
                      </div>
                  </div>

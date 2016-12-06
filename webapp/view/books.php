@@ -120,7 +120,7 @@ if(!$_SESSION["auth"]){
                     <a href="index.php"><span class="glyphicon glyphicon-shopping-cart"></span>
                         <?php
                         if($_SESSION["auth"]){
-                            echo "<span class='badge'>" . $_SESSION["cart"] . "</span>";
+                            echo "<span  id='cartSize' class='badge'>" . $_SESSION["cart"] . "</span>";
                         }
                         ?>
                     </a>

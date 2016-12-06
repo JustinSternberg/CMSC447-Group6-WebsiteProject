@@ -6,7 +6,7 @@ $db = new DB();
 $pass = $db->authorize($_POST["email"], $_POST["password"]);
 $_SESSION["name"] = $db->getName($_POST["email"]);
 $_SESSION["email"] = $_POST["email"];
-
+$_SESSION["cart"] = 0;
 $_SESSION["auth"] = false;
 if ( hash_equals($pass, crypt($_POST["password"], $pass)) ) {
     $_SESSION["auth"] = true;

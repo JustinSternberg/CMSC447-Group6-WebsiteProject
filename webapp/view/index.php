@@ -2,7 +2,7 @@
     require_once(dirname(__FILE__) . '/../load.php');
     session_start();
     $db = new DB();
-    $_SESSION["cart"] = 0;
+   
 ?>
 <!DOCTYPE html>
 <html lang="en">

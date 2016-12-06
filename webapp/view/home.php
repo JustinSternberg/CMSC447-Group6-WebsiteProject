@@ -115,7 +115,7 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                     <a href="home.php">Profile
                         <?php
                         if($_SESSION["auth"]){
-                            echo "<span class='badge'>" . $_SESSION["msg"] . "</span>";
+                            echo "<span  class='badge'>" . $_SESSION["msg"] . "</span>";
                         }
                         ?>
                     </a>
@@ -124,7 +124,7 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                     <a href="index.php"><span class="glyphicon glyphicon-shopping-cart"></span>
                         <?php
                         if($_SESSION["auth"]){
-                            echo "<span class='badge'>" . $_SESSION["cart"] . "</span>";
+                            echo "<span id='cartSize' class='badge'>0</span>";
                         }
                         ?>
                     </a>

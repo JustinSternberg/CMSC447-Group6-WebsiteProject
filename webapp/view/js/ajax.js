@@ -16,6 +16,21 @@ function updateView(){
 }
 
 
+function updateCart(){
+    var id = 1;
+    new Ajax.Request( "cart.php",
+        {
+            method: "get",
+            parameters: {id : id},
+            onSuccess: cartSuccess
+        }
+    );
+}
+
+function cartSuccess(ajax){
+    document.getElementById("cartSize").innerHTML = ajax.responseText;
+}
+
 /*page(var int);
  *Parameters(pageNo), number, which will determine which page to load
  *Desc: Used to paginate the active listings on the profile screen
