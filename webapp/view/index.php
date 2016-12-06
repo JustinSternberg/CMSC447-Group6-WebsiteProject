@@ -200,7 +200,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="clothes.php" class="portfolio-link" data-toggle="modal">
+                    <a href="clothes.php" class="portfolio-link">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -210,7 +210,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="elec.php" class="portfolio-link" data-toggle="modal">
+                    <a href="elec.php" class="portfolio-link">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -220,7 +220,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="pc.php" class="portfolio-link" data-toggle="modal">
+                    <a href="pc.php" class="portfolio-link">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -230,7 +230,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="events.php" class="portfolio-link" data-toggle="modal">
+                    <a href="events.php" class="portfolio-link">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -240,7 +240,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="food.php" class="portfolio-link" data-toggle="modal">
+                    <a href="food.php" class="portfolio-link">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>

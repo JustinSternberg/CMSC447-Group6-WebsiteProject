@@ -174,6 +174,26 @@ class DB {
         }
     }
 
+    public function getAllListings($ID){
+        //$ID will be books, electronics, food, services, events...
+        $table = "services";
+        try {
+            $conn = $this->connect();
+            $stmt = $conn->prepare("SELECT * FROM $table WHERE `type` = '" . $ID . "'");
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll();
+
+            $conn = null;
+
+            return $result;
+        }
+        catch(PDOException $e){
+            echo $e;
+            return null;
+        }
+    }
+
     public function getActiveListings($ID){
         $table = "user_accounts";
         $ID = strtoupper($ID);

@@ -36,6 +36,7 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
     <link href="css/styles.css" type="text/css" rel="stylesheet">
     <link href="css/profile.css" type="text/css" rel="stylesheet">
 
+
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -81,8 +82,6 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
         });
 
     </script>
-
-
 </head>
 
 <body id="page-top" class="index" bgcolor="#" >
@@ -160,6 +159,7 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                         </div>
                         <div class="profile-usertitle-job">
                             Developer <!-- 5 star rating system here -->
+
                         </div>
                     </div>
                     <!-- END SIDEBAR USER TITLE -->
@@ -277,20 +277,20 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                     <hr class="star-primary">
                     <form action="addItem.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
                         <!-- Item Edit Content goes here -->
-                        <label> Title:
+                        <label> Title: <br>
                             <input type="text" name="good" />
+                        </label> <br>
+                        <label> Price: <br>
+                            <input type="text" name="price" placeholder="$"/>
+                        </label><br>
+                        <label> Type: <br>
+                            <input type="text" name="type" placeholder="books, electronics..."/>
+                        </label> <br />
+                        <label> Tags: <br>
+                            <textarea name="meta" placeholder="Used for searching"></textarea>
                         </label>
-                        <label> Price
-                            <input type="text" name="price" />
-                        </label>
-                        <label> Tags:
-                            <textarea name="meta" placeholder="Enter tags here"></textarea>
-                        </label>
-                        <label> Type:
-                            <input type="text" name="type" />
-                        </label>
-                        <label> Item Description:
-                            <textarea name="desc" placeholder="Enter item description"></textarea>
+                        <label> Item Description: <br>
+                            <textarea name="desc" placeholder="Enter item condition"></textarea>
                         </label>
                         <label>
                             Image upload: <input type="file" name="fileToUpload" id="fileToUpload">

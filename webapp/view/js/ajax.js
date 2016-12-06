@@ -15,6 +15,7 @@ function updateView(){
     page(pageNum);
 }
 
+
 /*page(var int);
  *Parameters(pageNo), number, which will determine which page to load
  *Desc: Used to paginate the active listings on the profile screen
@@ -50,7 +51,7 @@ function pageSuccess(ajax){
             //items[index][mySQL att.]
             var row = document.createElement('span');
 
-            row.className = 'list-group-item spacing';
+            row.className = 'list-group-item spacing w3-hover-light-blue';
             row.innerHTML = "<a class='avis portfolio-link' data-toggle='modal' onclick='popEdit(\"" + items[i]["unique"] + "\");' href='#editItem'>" +
                                 "<span style='float:left;' class='glyphicon glyphicon-pencil listing-left hov-blue'></span>" +
                             "</a>" +
@@ -61,7 +62,8 @@ function pageSuccess(ajax){
         }
     }
     else{
-        document.getElementById("list-content").innerHTML = "There appears to be nothing here.<br/> <a>Create Listing?</a>";
+        document.getElementById("list-content").innerHTML = "There appears to be nothing here.<br/> " +
+                                                            "<a data-toggle='modal' href='#editItem'>Create Listing?</a>";
     }
 }
 

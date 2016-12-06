@@ -149,7 +149,7 @@ if(!$_SESSION["auth"]){
         </div>
         <div id="products" class="row list-group">
             <!-- Dynamic Content goes here-->
-            <?php popListings("books")?>
+            <?php popListings("computers")?>
         </div>
     </div>
 

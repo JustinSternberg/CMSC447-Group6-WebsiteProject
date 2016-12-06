@@ -120,6 +120,7 @@ body {
 .spacing{
     padding-top:10px;
     margin-top: 10px !important;
+    padding:20px;
 }
 
 
@@ -170,4 +171,17 @@ label.star:before {
 
 .hov-blue:hover{
     color:#428bca;
+}
+.w3-hover-light-blue{
+    -webkit-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s,filter 0.3s;
+    transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s,filter 0.3s;
+}
+.w3-light-blue,.w3-hover-light-blue:hover{color:#000!important;background-color:#87CEEB!important}
+
+.img-listing-fit{
+
+    width:100%;
+    max-width:400px;
+    height:100%;
+    max-height:250px;
 }

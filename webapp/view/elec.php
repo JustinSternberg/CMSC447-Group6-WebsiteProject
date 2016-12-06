@@ -1,5 +1,6 @@
 <?php
 require_once(dirname(__FILE__) . '/../load.php');
+require_once("libs.php");
 session_start();
 if(!$_SESSION["auth"]){
     header("Location:logout.php");
@@ -30,9 +31,10 @@ if(!$_SESSION["auth"]){
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
-    <link href="css/styles.css" type="text/css" rel="stylesheet">
+    <!--link href="css/freelancer.min.css" rel="stylesheet"-->
+    <!--link href="css/styles.css" type="text/css" rel="stylesheet"-->
     <link href="css/profile.css" type="text/css" rel="stylesheet">
+
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -65,11 +67,15 @@ if(!$_SESSION["auth"]){
                 .on('show.bs.modal', function() {
                     populate(this.id);
                 });
-
+            $(document).ready(function() {
+                $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item ');});
+                $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item ');$('#products .item').addClass('grid-group-item');});
+            });
         });
 
     </script>
 
+    <link href="css/listed-items.css" type="text/css" rel="stylesheet">
 
 </head>
 
@@ -132,7 +138,23 @@ if(!$_SESSION["auth"]){
 
 <!-- Header -->
 <header>
+    <div class="container">
+        <!-- Move this to bottom of page -->
+        <div class="well well-sm">
+            <div class="btn-group">
+                <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                        class="glyphicon glyphicon-th"></span>Grid</a>
+            </div>
+        </div>
+        <div id="products" class="row list-group">
+            <!-- Dynamic Content goes here-->
+            <?php popListings("electronics")?>
+        </div>
+    </div>
+
 </header>
+
 
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>

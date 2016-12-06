@@ -27,6 +27,8 @@ if(isset($_POST["submit"])) {
 }
 //echo '<img src="data:image/gif;base64,'.base64_encode( file_get_contents($_FILES["fileToUpload"]["tmp_name"] )).'"/>';
 
+//strtr money so its only int
+
 $dat["img"] = file_get_contents($_FILES["fileToUpload"]["tmp_name"]);
 $id =  $_SESSION["campusID"];
 $dat["campusID"] = $id;
