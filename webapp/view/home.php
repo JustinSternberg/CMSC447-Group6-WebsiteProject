@@ -35,6 +35,7 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
     <link href="css/freelancer.min.css" rel="stylesheet">
     <link href="css/styles.css" type="text/css" rel="stylesheet">
     <link href="css/profile.css" type="text/css" rel="stylesheet">
+    <link href="css/star.css" type="text/css" rel="stylesheet">
 
 
     <!-- Custom Fonts -->
@@ -226,13 +227,21 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                     </div>
                     <!-- END SIDEBAR USERPIC -->
                     <!-- SIDEBAR USER TITLE -->
-                    <div class="profile-usertitle">
+                    <div class="profile-usertitle" >
                         <div class="profile-usertitle-name">
                             <?php echo $_SESSION["name"]; ?>
                         </div>
                         <div class="profile-usertitle-job">
-                            Developer <!-- 5 star rating system here -->
+                            <!--Developer <!-- 5 star rating system here -->
+                            <fieldset class="rating" style="margin-left:25%;">
 
+                                <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+                                <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+                                <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+                                <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+                                <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                            </fieldset>
+                            <br><br>
                         </div>
                     </div>
                     <!-- END SIDEBAR USER TITLE -->

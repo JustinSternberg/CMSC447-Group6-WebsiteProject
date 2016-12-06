@@ -50,9 +50,13 @@ function popListings($page){
                          </div>
                          <div class=\"col-xs-12 col-md-6\">
                          <!-- Finish linking this pls-->
-                          <a class=\"btn btn-success\" onclick='updateCart();' >Add to cart</a><br>
+                         
+                          <a class=\"btn btn-success\" style='display:inline-block;' onclick='updateCart();' >Add to cart</a><br>
     Listed by:  <a style='color:blue !important;' data-toggle='modal' onclick='popRate(\"" . $v["campusID"] . "\")' href='#rate'>" . $db->getUsername($v["campusID"]) . "
                           </a>
+                           <a href='#' style='position:relative;left:-70%;color:#d43f3a!important; display:inline-block;'>
+                                Report post?
+                             </a>
                          </div>
                      </div>
                  </div>
@@ -96,6 +100,9 @@ function searchPop($term){
                              </div>
                              <div class=\"col-xs-12 col-md-6\">
                              <!-- Finish linking this pls-->
+                             <a href='#' style='color:blue!important'>
+                                Report post?
+                             </a>
                               <a class=\"btn btn-success\" onclick='updateCart();' >Add to cart</a><br>
         Listed by:  <a style='color:blue !important;' data-toggle='modal' onclick='popRate(\"" . $v["campusID"] . "\")' href='#rate'>" . $db->getUsername($v["campusID"]) . "
                               </a>

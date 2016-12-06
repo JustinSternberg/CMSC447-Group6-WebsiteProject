@@ -215,7 +215,32 @@ if(!$_SESSION["auth"]){
     </div>
 
 </header>
-
+<div class="modal fade" id="rate"  role="dialog" aria-hidden="true" style="width:300px;height:200px;margin:0 auto;position:relative;top:-500px;">
+    <div class="modal-content" id="create">
+        <div class="close-modal hov-red" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                    <span class="glyphicon glyphicon-remove" style="font-size:1.5em;"></span>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="width:inherit;height: inherit;">
+            <div class="row">
+                <div class="modal-body fit" >
+                    <h2 style="text-align:center;width:inherit !important;">Rate Account</h2>
+                    <hr class="star-primary">
+                    <div class="rating" style="margin-left:25%;">
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
