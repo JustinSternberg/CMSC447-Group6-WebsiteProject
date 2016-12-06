@@ -95,16 +95,16 @@ if(!$_SESSION["auth"]){
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
+        <div class="navbar-header page-scroll" >
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="#page-top">UMBC Marketplace</a>
+            <a  class="navbar-brand" style="margin-left:-100px;" href="#page-top">UMBC Marketplace</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" style="margin-right:-100px;">
 
                 <li class="hidden">
                     <a href="#page-top"></a>
@@ -131,7 +131,7 @@ if(!$_SESSION["auth"]){
                     <a href="index.php"><span class="glyphicon glyphicon-shopping-cart"></span>
                         <?php
                         if($_SESSION["auth"]){
-                            echo "<span  id='cartSize' class='badge'>" . $_SESSION["cart"] . "</span>";
+                            echo "<span class='badge'>" . $_SESSION["cart"] . "</span>";
                         }
                         ?>
                     </a>
@@ -139,11 +139,72 @@ if(!$_SESSION["auth"]){
                 <li class="page-scroll">
                     <?php if($_SESSION["auth"])echo "<a href='logout.php'>Logout</a>"; ?>
                 </li>
+                <li>
+                    <?php
+                    if($_SESSION["auth"]) {
+                        echo '
+                            <form action="results.php" method="post" class="navbar-form" role="search" style="position:relative;right:0px;">
+                                <div class="input-group">
+                                    <input type="text" name="search" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-search">
+                                        <span class="sr-only">Search...</span>
+                                    </span>
+                                </button>
+                            </span>
+                                </div>
+                            </form>';
+                    }
+                    ?>
+                </li>
             </ul>
         </div>
-
+        <ul class="nav navbar-nav navbar-right" <?php if($_SESSION["auth"])echo "style='display:none;'"; ?>>
+            <li><p class="navbar-text">Already have an account?</p></li>
+            <li class="dropdown keep">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                <ul id="login-dp" class="dropdown-menu">
+                    <li>
+                        <div class="row">
+                            <div class="col-md-12">
+                                Login via
+                                <div class="social-buttons">
+                                    <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                                    <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                                </div>
+                                or
+                                <!-- LOGIN SECTION -->
+                                <form class="form" role="form" method="post" action="login.php" accept-charset="UTF-8" id="login-nav">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                        <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                        <input type="password" name="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                        <?php if($_SESSION["wrongPass"]){echo "<span class='wrong'>*Incorrect Login</span>";} ?>
+                                        <div class="help-block text-right"><a href="" style="color:#efc660 !important;">Forget the password ?</a></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> keep me logged-in
+                                        </label>
+                                        <i style="font-size:.6em;">Don't have an account? <a class="avis portfolio-link" data-toggle="modal" href="#createAccount">Register</a></i>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
         <!-- /.navbar-collapse -->
     </div>
+
     <!-- /.container-fluid -->
 </nav>
 
