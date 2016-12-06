@@ -74,12 +74,13 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">UMBC Marketplace</a>
+                <a style="margin-right:100px;" class="navbar-brand" href="#page-top">UMBC Marketplace</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" style="margin-right:-100px;">
+
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
@@ -112,6 +113,25 @@
                     </li>
                     <li class="page-scroll">
                         <?php if($_SESSION["auth"])echo "<a href='logout.php'>Logout</a>"; ?>
+                    </li>
+                    <li>
+                        <?php
+                        if($_SESSION["auth"]) {
+                            echo '
+                            <form action="results.php" method="post" class="navbar-form" role="search" style="position:relative;right:0px;">
+                                <div class="input-group">
+                                    <input type="text" name="search" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-search">
+                                        <span class="sr-only">Search...</span>
+                                    </span>
+                                </button>
+                            </span>
+                                </div>
+                            </form>';
+                        }
+                        ?>
                     </li>
                 </ul>
             </div>

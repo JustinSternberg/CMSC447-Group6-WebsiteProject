@@ -149,9 +149,9 @@ if(!$_SESSION["auth"]){
 
 <!-- Header -->
 <header>
-    <div class="container">
+    <div class="container" >
         <!-- Move this to bottom of page -->
-        <div class="well well-sm">
+        <div  class="well well-sm" style="margin-top:-70px;">
             <div class="btn-group">
                 <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
             </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span

@@ -99,6 +99,7 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
@@ -124,13 +125,32 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                     <a href="index.php"><span class="glyphicon glyphicon-shopping-cart"></span>
                         <?php
                         if($_SESSION["auth"]){
-                            echo "<span id='cartSize' class='badge'>0</span>";
+                            echo "<span id='cartSize' class='badge'>" . $_SESSION["cart"] . "</span>";
                         }
                         ?>
                     </a>
                 </li>
                 <li class="page-scroll">
                     <?php if($_SESSION["auth"])echo "<a href='logout.php'>Logout</a>"; ?>
+                </li>
+                <li>
+                    <?php
+                    if($_SESSION["auth"]) {
+                        echo '
+                            <form action="results.php" method="post" class="navbar-form" role="search">
+                                <div class="input-group">
+                                    <input type="text" name="search" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-search">
+                                        <span class="sr-only">Search...</span>
+                                    </span>
+                                </button>
+                            </span>
+                                </div>
+                            </form>';
+                    }
+                    ?>
                 </li>
             </ul>
         </div>
@@ -148,7 +168,19 @@ $_SESSION["campusID"] = $db->getCampusID($_SESSION["email"]);
                 <div class="profile-sidebar">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic" id="heat">
-                        <img src='img/profiles/1.jpg' class='img-thumbnail picture hidden-xs' alt=''><br />
+
+                        <?php
+
+                                $result = $db->getImage($_SESSION["email"]);
+
+                                if($result) {
+                                    echo '<img src="data:image/' . $result[0]["type"] . ';base64,' . base64_encode($result[0]["image"]) . '"/>';
+                                }
+                                else{
+                                    echo '<img src="img/profile.jpg" class="img-thumbnail picture hidden-xs" alt="">';
+                                }
+                        ?>
+                        <br>
                         <a data-toggle='modal' href='#changeProfile' style="font-size:.8em;">Change picture?</a>
                     </div>
                     <!-- END SIDEBAR USERPIC -->

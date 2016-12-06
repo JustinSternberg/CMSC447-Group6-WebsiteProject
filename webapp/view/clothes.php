@@ -120,7 +120,7 @@ if(!$_SESSION["auth"]){
                     <a href="index.php"><span class="glyphicon glyphicon-shopping-cart"></span>
                         <?php
                         if($_SESSION["auth"]){
-                            echo "<span class='badge'>" . $_SESSION["cart"] . "</span>";
+                            echo "<span  id='cartSize' class='badge'>" . $_SESSION["cart"] . "</span>";
                         }
                         ?>
                     </a>
@@ -140,7 +140,7 @@ if(!$_SESSION["auth"]){
 <header>
     <div class="container">
         <!-- Move this to bottom of page -->
-        <div class="well well-sm">
+        <div  class="well well-sm" style="margin-top:-70px;">
             <div class="btn-group">
                 <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
             </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span

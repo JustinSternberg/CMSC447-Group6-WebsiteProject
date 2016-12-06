@@ -33,9 +33,9 @@ function popListings($page){
         foreach ($result as $v) {
             $id = $v["good"];
             $img = $db->getImage($v["unique"]);
-            $src = '<img class="group list-group-image"   src="data:image/' . $img[0]["type"] . ';base64,' . base64_encode($img[0]["image"]) . '"/>';
+            $src = '<img class="group list-group-image "   src="data:image/' . $img[0]["type"] . ';base64,' . base64_encode($img[0]["image"]) . '"/>';
             echo "<div id='$id' class=\"item  col-xs-4 col-lg-4\">
-             <div class=\"thumbnail\" style='padding:20px;'>  
+             <div class=\"thumbnail shadow\" style='padding:20px;'>  
               $src
              
               
@@ -79,7 +79,7 @@ function searchPop($term){
             if (strpos(strtolower($v["meta"]), $term) !== false || strpos(strtolower($v["good"]), $term) !== false) {
                 $id = $v["good"];
                 $img = $db->getImage($v["unique"]);
-                $src = '<img class="group list-group-image"   src="data:image/' . $img[0]["type"] . ';base64,' . base64_encode($img[0]["image"]) . '"/>';
+                $src = '<img class="group list-group-image "   src="data:image/' . $img[0]["type"] . ';base64,' . base64_encode($img[0]["image"]) . '"/>';
                 echo "<div id='$id' class=\"item  col-xs-4 col-lg-4\">
                  <div class=\"thumbnail\" style='padding:20px;'>  
                   $src

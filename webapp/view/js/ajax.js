@@ -170,7 +170,7 @@ function check(ID){
                 onFailure: checkFailure
             }
         );
-    }
+    }/*
     else if(ID == "username"){
         //Sanitize before
         new Ajax.Request( "check.php",
@@ -182,7 +182,7 @@ function check(ID){
                 onFailure: checkFailure
             }
         );
-    }
+    }*/
 }
 
 /*
